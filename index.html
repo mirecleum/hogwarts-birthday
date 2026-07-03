@@ -19,36 +19,24 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
-html {
-width: 100%;
-background: var(--dark-bg);
-}
-
+html { width: 100%; background: var(--dark-bg); }
 body {
-width: 100%;
-min-height: 100vh;
+width: 100%; min-height: 100vh;
 font-family: 'Cormorant Garamond', serif;
-background: var(--dark-bg);
-color: var(--parchment);
-overflow-x: hidden;
-overflow-y: auto;
+background: var(--dark-bg); color: var(--parchment);
+overflow-x: hidden; overflow-y: auto;
 }
 
 /* === PRELOADER === */
 #preloader {
-position: fixed; top: 0; left: 0;
-width: 100%; height: 100%;
-background: var(--darker-bg);
-z-index: 10000;
-display: flex; flex-direction: column;
-align-items: center; justify-content: center;
+position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+background: var(--darker-bg); z-index: 10000;
+display: flex; flex-direction: column; align-items: center; justify-content: center;
 transition: opacity 1s ease;
 }
 #preloader.hidden { opacity: 0; pointer-events: none; }
 #preloader .wand-loader {
-width: 200px; height: 4px;
-background: rgba(212,168,67,0.2);
+width: 200px; height: 4px; background: rgba(212,168,67,0.2);
 border-radius: 2px; overflow: hidden; margin-top: 30px;
 }
 #preloader .wand-loader-fill {
@@ -57,21 +45,19 @@ background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--go
 border-radius: 2px; transition: width 0.3s ease;
 }
 #preloader h2 {
-font-family: 'Cinzel Decorative', serif;
-color: var(--gold); font-size: 1.2em;
-letter-spacing: 3px; margin-top: 20px;
+font-family: 'Cinzel Decorative', serif; color: var(--gold);
+font-size: 1.2em; letter-spacing: 3px; margin-top: 20px;
 animation: pulse-glow 2s infinite;
 }
 
 /* === STARS === */
 #stars-bg {
-position: fixed; top: 0; left: 0;
-width: 100%; height: 100%; z-index: 0;
-pointer-events: none;
+position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+z-index: 0; pointer-events: none;
 }
 .star {
-position: absolute; background: white;
-border-radius: 50%; animation: twinkle ease-in-out infinite;
+position: absolute; background: white; border-radius: 50%;
+animation: twinkle ease-in-out infinite;
 }
 @keyframes twinkle {
 0%, 100% { opacity: 0.2; transform: scale(1); }
@@ -80,14 +66,13 @@ border-radius: 50%; animation: twinkle ease-in-out infinite;
 
 /* === PARTICLES === */
 #particles-container {
-position: fixed; top: 0; left: 0;
-width: 100%; height: 100%;
+position: fixed; top: 0; left: 0; width: 100%; height: 100%;
 pointer-events: none; z-index: 5; overflow: hidden;
 }
 .particle {
 position: absolute; width: 3px; height: 3px;
-background: var(--gold-light); border-radius: 50%;
-opacity: 0; animation: float-particle linear infinite;
+background: var(--gold-light); border-radius: 50%; opacity: 0;
+animation: float-particle linear infinite;
 box-shadow: 0 0 6px var(--gold), 0 0 12px var(--gold-dark);
 }
 @keyframes float-particle {
@@ -97,32 +82,16 @@ box-shadow: 0 0 6px var(--gold), 0 0 12px var(--gold-dark);
 }
 
 /* === SCENES === */
-#scene-container {
-position: relative; z-index: 10; width: 100%;
-}
-
+#scene-container { position: relative; z-index: 10; width: 100%; }
 .scene {
-display: none;
-width: 100%;
-min-height: 100vh;
-padding: 60px 20px 80px;
-position: relative;
-overflow: visible;
+display: none; width: 100%; min-height: 100vh;
+padding: 60px 20px 80px; position: relative; overflow: visible;
 }
-
-.scene.active {
-display: block;
-animation: scene-enter 1.5s ease-out;
-}
-
-@keyframes scene-enter {
-0% { opacity: 0; } 100% { opacity: 1; }
-}
-
+.scene.active { display: block; animation: scene-enter 1.5s ease-out; }
+@keyframes scene-enter { 0% { opacity: 0; } 100% { opacity: 1; } }
 .scene::before {
-content: ''; position: fixed;
-top: 0; left: 0; width: 100%; height: 100%;
-z-index: -1; pointer-events: none;
+content: ''; position: fixed; top: 0; left: 0;
+width: 100%; height: 100%; z-index: -1; pointer-events: none;
 }
 .scene-narrator::before { background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a12 70%); }
 .scene-mcgonagall::before { background: radial-gradient(ellipse at top, #2d1b00 0%, #0a0a12 70%); }
@@ -138,27 +107,19 @@ z-index: -1; pointer-events: none;
 .scene-sirius::before { background: radial-gradient(ellipse at top, #0a0a1a 0%, #020204 80%); }
 .scene-dumbledore::before { background: radial-gradient(ellipse at center, #1a1a3a 0%, #0a0a12 60%); }
 .scene-finale::before { background: radial-gradient(ellipse at center, #2a1a00 0%, #0a0a12 60%); }
-
-.scene-content {
-max-width: 700px; width: 100%;
-margin: 0 auto; text-align: center;
-}
+.scene-content { max-width: 700px; width: 100%; margin: 0 auto; text-align: center; }
 
 /* === CHARACTER === */
 .character-avatar {
-width: 120px; height: 120px; border-radius: 50%;
-margin: 0 auto 30px;
+width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 30px;
 border: 3px solid var(--gold);
-display: flex; align-items: center; justify-content: center;
-font-size: 50px;
+display: flex; align-items: center; justify-content: center; font-size: 50px;
 background: rgba(212,168,67,0.1);
 box-shadow: 0 0 30px rgba(212,168,67,0.3), inset 0 0 20px rgba(212,168,67,0.1);
-animation: avatar-glow 3s ease-in-out infinite;
-position: relative; overflow: hidden;
+animation: avatar-glow 3s ease-in-out infinite; position: relative; overflow: hidden;
 }
 .character-avatar::after {
-content: ''; position: absolute;
-top: -50%; left: -50%; width: 200%; height: 200%;
+content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
 background: conic-gradient(from 0deg, transparent, rgba(212,168,67,0.1), transparent);
 animation: avatar-rotate 4s linear infinite;
 }
@@ -167,43 +128,123 @@ animation: avatar-rotate 4s linear infinite;
 0%, 100% { box-shadow: 0 0 30px rgba(212,168,67,0.3); }
 50% { box-shadow: 0 0 50px rgba(212,168,67,0.5), 0 0 80px rgba(212,168,67,0.2); }
 }
-
 .character-name {
-font-family: 'Cinzel Decorative', serif;
-font-size: 1.8em; color: var(--gold);
-margin-bottom: 5px;
-text-shadow: 0 0 20px rgba(212,168,67,0.5);
+font-family: 'Cinzel Decorative', serif; font-size: 1.8em; color: var(--gold);
+margin-bottom: 5px; text-shadow: 0 0 20px rgba(212,168,67,0.5);
 }
 .character-title {
-font-family: 'Cinzel', serif;
-font-size: 0.9em; color: var(--gold-dark);
-margin-bottom: 30px; letter-spacing: 2px;
-text-transform: uppercase;
+font-family: 'Cinzel', serif; font-size: 0.9em; color: var(--gold-dark);
+margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase;
 }
 
+/* === VOICE INDICATOR === */
+.voice-indicator {
+display: inline-flex; align-items: center; gap: 8px;
+padding: 6px 16px; border-radius: 20px;
+background: rgba(212,168,67,0.1); border: 1px solid rgba(212,168,67,0.3);
+margin-bottom: 20px; font-family: 'Cinzel', serif; font-size: 0.8em;
+color: var(--gold-dark); letter-spacing: 1px;
+}
+.voice-indicator .voice-bars {
+display: flex; align-items: flex-end; gap: 2px; height: 14px;
+}
+.voice-indicator .voice-bar {
+width: 3px; background: var(--gold); border-radius: 1px;
+animation: voice-bar-anim 0.8s ease-in-out infinite;
+}
+.voice-indicator .voice-bar:nth-child(1) { height: 40%; animation-delay: 0s; }
+.voice-indicator .voice-bar:nth-child(2) { height: 70%; animation-delay: 0.15s; }
+.voice-indicator .voice-bar:nth-child(3) { height: 100%; animation-delay: 0.3s; }
+.voice-indicator .voice-bar:nth-child(4) { height: 50%; animation-delay: 0.45s; }
+.voice-indicator .voice-bar:nth-child(5) { height: 80%; animation-delay: 0.1s; }
+.voice-indicator.paused .voice-bar { animation-play-state: paused; }
+.voice-indicator.stopped { display: none; }
+@keyframes voice-bar-anim {
+0%, 100% { transform: scaleY(0.3); }
+50% { transform: scaleY(1); }
+}
+/* === MUSIC INDICATOR === */
+.music-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(10,10,18,0.8);
+  border: 1px solid rgba(212,168,67,0.3);
+  backdrop-filter: blur(10px);
+  font-family: 'Cinzel', serif;
+  font-size: 0.75em;
+  color: var(--gold-dark);
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+.music-indicator:hover {
+  border-color: var(--gold);
+  cursor: default;
+}
+.music-indicator .music-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+.music-indicator .music-bar {
+  width: 3px;
+  background: var(--gold);
+  border-radius: 1px;
+  animation: music-bar-anim 1.2s ease-in-out infinite;
+}
+.music-indicator .music-bar:nth-child(1) { height: 30%; animation-delay: 0s; }
+.music-indicator .music-bar:nth-child(2) { height: 60%; animation-delay: 0.2s; }
+.music-indicator .music-bar:nth-child(3) { height: 100%; animation-delay: 0.4s; }
+.music-indicator .music-bar:nth-child(4) { height: 45%; animation-delay: 0.6s; }
+@keyframes music-bar-anim {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+.music-indicator.paused .music-bar {
+  animation-play-state: paused;
+}
+.music-indicator.stopped {
+  opacity: 0.4;
+}
+.music-indicator.stopped .music-bar {
+  animation: none;
+  height: 30% !important;
+}
+
+@media (max-width: 600px) {
+  .music-indicator {
+    bottom: 10px;
+    left: 10px;
+    padding: 6px 12px;
+    font-size: 0.65em;
+  }
+}
 /* === TYPEWRITER === */
 .dialogue-container { min-height: 100px; margin: 20px 0; }
 .dialogue-text {
-font-family: 'Cormorant Garamond', serif;
-font-size: 1.4em; line-height: 1.8;
-color: var(--parchment);
+font-family: 'Cormorant Garamond', serif; font-size: 1.4em;
+line-height: 1.8; color: var(--parchment);
 text-shadow: 0 0 10px rgba(244,232,193,0.1);
 }
 .typewriter-cursor {
 display: inline-block; width: 2px; height: 1.2em;
 background: var(--gold); margin-left: 2px;
-animation: blink-cursor 0.8s step-end infinite;
-vertical-align: text-bottom;
+animation: blink-cursor 0.8s step-end infinite; vertical-align: text-bottom;
 }
 @keyframes blink-cursor { 50% { opacity: 0; } }
 
 /* === TASK AREA === */
 .task-area {
 margin: 30px 0; padding: 30px;
-border: 1px solid rgba(212,168,67,0.3);
-border-radius: 15px;
-background: rgba(10,10,18,0.6);
-backdrop-filter: blur(10px);
+border: 1px solid rgba(212,168,67,0.3); border-radius: 15px;
+background: rgba(10,10,18,0.6); backdrop-filter: blur(10px);
 animation: task-appear 0.8s ease-out;
 }
 @keyframes task-appear {
@@ -211,33 +252,25 @@ animation: task-appear 0.8s ease-out;
 100% { opacity: 1; transform: translateY(0); }
 }
 .task-title {
-font-family: 'Cinzel', serif;
-color: var(--gold); font-size: 1.1em;
-margin-bottom: 15px; letter-spacing: 2px;
-text-transform: uppercase;
+font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.1em;
+margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase;
 }
 
 /* === HOGWARTS SCENE === */
 .hogwarts-scene {
-position: relative; width: 100%; max-width: 600px;
-aspect-ratio: 3/2;
-margin: 20px auto; border-radius: 15px;
-overflow: hidden; border: 2px solid var(--gold-dark);
+position: relative; width: 100%; max-width: 600px; aspect-ratio: 3/2;
+margin: 20px auto; border-radius: 15px; overflow: hidden;
+border: 2px solid var(--gold-dark);
 background: linear-gradient(180deg, #0a0a2e 0%, #1a1a3e 30%, #2a2a4e 60%, #1a2a1a 100%);
-cursor: crosshair;
-touch-action: manipulation;
+cursor: crosshair; touch-action: manipulation;
 }
-
 .castle-tower {
-position: absolute;
-background: linear-gradient(180deg, #2a2a3a, #1a1a2a);
+position: absolute; background: linear-gradient(180deg, #2a2a3a, #1a1a2a);
 border-radius: 5px 5px 0 0;
 }
 .castle-tower::before {
-content: ''; position: absolute;
-top: -20px; left: 50%; transform: translateX(-50%);
-border-left: 15px solid transparent;
-border-right: 15px solid transparent;
+content: ''; position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+border-left: 15px solid transparent; border-right: 15px solid transparent;
 border-bottom: 20px solid #3a3a4a;
 }
 .castle-tower.t1 { left: 10%; width: 15%; height: 70%; bottom: 20%; }
@@ -245,110 +278,72 @@ border-bottom: 20px solid #3a3a4a;
 .castle-tower.t3 { left: 46%; width: 18%; height: 75%; bottom: 20%; }
 .castle-tower.t4 { right: 22%; width: 12%; height: 85%; bottom: 20%; }
 .castle-tower.t5 { right: 5%; width: 14%; height: 65%; bottom: 20%; }
-
 .castle-wall {
-position: absolute; bottom: 20%; left: 5%;
-width: 90%; height: 35%;
-background: linear-gradient(180deg, #2a2a3a, #1a1a2a);
-border-radius: 3px 3px 0 0;
+position: absolute; bottom: 20%; left: 5%; width: 90%; height: 35%;
+background: linear-gradient(180deg, #2a2a3a, #1a1a2a); border-radius: 3px 3px 0 0;
 }
 .castle-window {
 position: absolute; width: 8px; height: 12px;
-background: rgba(255,200,50,0.6);
-border-radius: 4px 4px 0 0;
+background: rgba(255,200,50,0.6); border-radius: 4px 4px 0 0;
 box-shadow: 0 0 10px rgba(255,200,50,0.4);
 animation: window-flicker 3s ease-in-out infinite;
 }
-@keyframes window-flicker {
-0%, 100% { opacity: 0.6; } 50% { opacity: 1; }
-}
-
+@keyframes window-flicker { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
 .hogwarts-ground {
 position: absolute; bottom: 0; width: 100%; height: 20%;
 background: linear-gradient(180deg, #1a2a1a, #0a1a0a);
 }
 .hogwarts-lake {
-position: absolute; bottom: 25%; left: 10%;
-width: 30%; height: 40%;
+position: absolute; bottom: 25%; left: 10%; width: 30%; height: 40%;
 background: linear-gradient(180deg, rgba(30,50,80,0.6), rgba(20,40,70,0.4));
-border-radius: 50%;
-animation: lake-shimmer 4s ease-in-out infinite;
+border-radius: 50%; animation: lake-shimmer 4s ease-in-out infinite;
 }
-@keyframes lake-shimmer {
-0%, 100% { opacity: 0.6; } 50% { opacity: 0.9; }
-}
+@keyframes lake-shimmer { 0%, 100% { opacity: 0.6; } 50% { opacity: 0.9; } }
 .hogwarts-moon {
-position: absolute; top: 10%; right: 15%;
-width: 50px; height: 50px; border-radius: 50%;
-background: radial-gradient(circle at 40% 40%, #fffde0, #f0e68c);
+position: absolute; top: 10%; right: 15%; width: 50px; height: 50px;
+border-radius: 50%; background: radial-gradient(circle at 40% 40%, #fffde0, #f0e68c);
 box-shadow: 0 0 40px rgba(255,253,224,0.4), 0 0 80px rgba(255,253,224,0.2);
 }
-
 .hidden-item {
-position: absolute; cursor: pointer;
-transition: all 0.3s ease;
+position: absolute; cursor: pointer; transition: all 0.3s ease;
 font-size: 24px; opacity: 0.3;
 filter: drop-shadow(0 0 3px rgba(0,0,0,0.8));
-z-index: 10; user-select: none;
--webkit-tap-highlight-color: transparent;
+z-index: 10; user-select: none; -webkit-tap-highlight-color: transparent;
 }
 .hidden-item:hover { opacity: 0.5; transform: scale(1.15); }
 .hidden-item.found {
 opacity: 1 !important; transform: scale(1.3);
 filter: drop-shadow(0 0 15px var(--gold));
-animation: item-found 0.6s ease-out;
-pointer-events: none;
+animation: item-found 0.6s ease-out; pointer-events: none;
 }
-@keyframes item-found {
-0% { transform: scale(1.5); } 50% { transform: scale(1.8); }
-100% { transform: scale(1.3); }
-}
-.found-counter {
-font-family: 'Cinzel', serif;
-color: var(--gold); font-size: 1.2em; margin-top: 15px;
-}
+@keyframes item-found { 0% { transform: scale(1.5); } 50% { transform: scale(1.8); } 100% { transform: scale(1.3); } }
+.found-counter { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.2em; margin-top: 15px; }
 
 /* === RIDDLE === */
 .riddle-card {
-background: rgba(20,10,40,0.6);
-border: 1px solid rgba(212,168,67,0.3);
+background: rgba(20,10,40,0.6); border: 1px solid rgba(212,168,67,0.3);
 border-radius: 10px; padding: 25px; margin: 15px 0;
 }
 .riddle-text {
-font-family: 'Cormorant Garamond', serif;
-font-size: 1.3em; font-style: italic;
+font-family: 'Cormorant Garamond', serif; font-size: 1.3em; font-style: italic;
 color: var(--parchment); margin-bottom: 15px; line-height: 1.6;
 }
 .riddle-input {
-width: 100%; max-width: 300px;
-padding: 12px 20px;
+width: 100%; max-width: 300px; padding: 12px 20px;
 font-family: 'Cormorant Garamond', serif; font-size: 1.2em;
-background: rgba(244,232,193,0.1);
-border: 1px solid var(--gold-dark); border-radius: 8px;
-color: var(--parchment); text-align: center; outline: none;
+background: rgba(244,232,193,0.1); border: 1px solid var(--gold-dark);
+border-radius: 8px; color: var(--parchment); text-align: center; outline: none;
 transition: all 0.3s ease;
 }
-.riddle-input:focus {
-border-color: var(--gold);
-box-shadow: 0 0 15px rgba(212,168,67,0.3);
-}
+.riddle-input:focus { border-color: var(--gold); box-shadow: 0 0 15px rgba(212,168,67,0.3); }
 .riddle-input::placeholder { color: rgba(244,232,193,0.3); }
-.riddle-hint {
-font-size: 0.85em; color: var(--gold-dark);
-margin-top: 8px; opacity: 0; transition: opacity 0.3s;
-}
+.riddle-hint { font-size: 0.85em; color: var(--gold-dark); margin-top: 8px; opacity: 0; transition: opacity 0.3s; }
 .riddle-hint.visible { opacity: 1; }
 .riddle-status { margin-top: 10px; font-family: 'Cinzel', serif; font-size: 0.9em; }
 .riddle-correct { color: #4CAF50; animation: correct-flash 0.5s ease; }
 .riddle-wrong { color: #f44336; animation: shake 0.5s ease; }
-@keyframes correct-flash {
-0% { transform: scale(1); } 50% { transform: scale(1.2); }
-100% { transform: scale(1); }
-}
-@keyframes shake {
-0%, 100% { transform: translateX(0); }
-25% { transform: translateX(-10px); } 75% { transform: translateX(10px); }
-}
+@keyframes correct-flash { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-10px); } 75% { transform: translateX(10px); } }
 
 /* === TIMER === */
 .timer-circle {
@@ -359,29 +354,22 @@ margin: 20px auto; position: relative;
 }
 .timer-circle svg {
 position: absolute; top: -4px; left: -4px;
-width: calc(100% + 8px); height: calc(100% + 8px);
-transform: rotate(-90deg);
+width: calc(100% + 8px); height: calc(100% + 8px); transform: rotate(-90deg);
 }
 .timer-circle svg circle {
 fill: none; stroke: var(--gold); stroke-width: 4;
 stroke-dasharray: 471; stroke-dashoffset: 0;
-transition: stroke-dashoffset 1s linear;
-stroke-linecap: round;
+transition: stroke-dashoffset 1s linear; stroke-linecap: round;
 }
-.timer-number {
-font-family: 'Cinzel Decorative', serif;
-font-size: 2.5em; color: var(--gold);
-}
+.timer-number { font-family: 'Cinzel Decorative', serif; font-size: 2.5em; color: var(--gold); }
 
 /* === BREATHING === */
 .breath-circle {
 width: 200px; height: 200px; border-radius: 50%;
 background: radial-gradient(circle, rgba(212,168,67,0.2), transparent);
-border: 2px solid rgba(212,168,67,0.3);
-margin: 30px auto;
+border: 2px solid rgba(212,168,67,0.3); margin: 30px auto;
 display: flex; align-items: center; justify-content: center;
-font-family: 'Cinzel', serif; font-size: 1.2em;
-color: var(--gold);
+font-family: 'Cinzel', serif; font-size: 1.2em; color: var(--gold);
 }
 .breath-circle.breathing-in { animation: breathe-in 4s ease-in-out forwards; }
 .breath-circle.breathing-out { animation: breathe-out 4s ease-in-out forwards; }
@@ -396,59 +384,45 @@ color: var(--gold);
 
 /* === BUTTONS === */
 .magic-btn {
-font-family: 'Cinzel', serif; font-size: 1.1em;
-padding: 15px 40px;
+font-family: 'Cinzel', serif; font-size: 1.1em; padding: 15px 40px;
 background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-dark));
 color: var(--darker-bg); border: none; border-radius: 8px;
 cursor: pointer; letter-spacing: 2px; text-transform: uppercase;
-position: relative; overflow: hidden;
-transition: all 0.3s ease; margin: 10px;
-box-shadow: 0 4px 15px rgba(212,168,67,0.3);
+position: relative; overflow: hidden; transition: all 0.3s ease;
+margin: 10px; box-shadow: 0 4px 15px rgba(212,168,67,0.3);
 }
-.magic-btn:hover {
-transform: translateY(-2px);
-box-shadow: 0 6px 25px rgba(212,168,67,0.5);
-}
+.magic-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(212,168,67,0.5); }
 .magic-btn:active { transform: translateY(0); }
 .magic-btn::before {
-content: ''; position: absolute;
-top: -50%; left: -50%; width: 200%; height: 200%;
+content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
 background: linear-gradient(transparent, rgba(255,255,255,0.1), transparent);
-transform: rotate(45deg) translateY(-100%);
-transition: transform 0.6s ease;
+transform: rotate(45deg) translateY(-100%); transition: transform 0.6s ease;
 }
 .magic-btn:hover::before { transform: rotate(45deg) translateY(100%); }
 .magic-btn.secondary {
 background: transparent; color: var(--gold);
 border: 1px solid var(--gold-dark); box-shadow: none;
 }
-.magic-btn.secondary:hover {
-background: rgba(212,168,67,0.1);
-box-shadow: 0 0 20px rgba(212,168,67,0.2);
-}
+.magic-btn.secondary:hover { background: rgba(212,168,67,0.1); box-shadow: 0 0 20px rgba(212,168,67,0.2); }
 .magic-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
 /* === INPUT === */
 .magic-input {
-width: 100%; max-width: 400px;
-padding: 15px 25px;
+width: 100%; max-width: 400px; padding: 15px 25px;
 font-family: 'Cormorant Garamond', serif; font-size: 1.3em;
-background: rgba(244,232,193,0.05);
-border: 1px solid rgba(212,168,67,0.3); border-radius: 10px;
-color: var(--parchment); text-align: center; outline: none;
+background: rgba(244,232,193,0.05); border: 1px solid rgba(212,168,67,0.3);
+border-radius: 10px; color: var(--parchment); text-align: center; outline: none;
 transition: all 0.3s ease;
 }
 .magic-input:focus {
-border-color: var(--gold);
-box-shadow: 0 0 20px rgba(212,168,67,0.2);
+border-color: var(--gold); box-shadow: 0 0 20px rgba(212,168,67,0.2);
 background: rgba(244,232,193,0.08);
 }
 
 /* === RADIO === */
 .magic-radio-group { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
 .magic-radio {
-display: flex; align-items: center;
-padding: 15px 25px;
+display: flex; align-items: center; padding: 15px 25px;
 border: 1px solid rgba(212,168,67,0.2); border-radius: 10px;
 cursor: pointer; transition: all 0.3s ease;
 font-family: 'Cormorant Garamond', serif; font-size: 1.2em;
@@ -460,14 +434,12 @@ box-shadow: 0 0 15px rgba(212,168,67,0.2);
 }
 .magic-radio .radio-dot {
 width: 20px; height: 20px; border-radius: 50%;
-border: 2px solid var(--gold-dark);
-margin-right: 15px; position: relative; flex-shrink: 0;
-transition: all 0.3s ease;
+border: 2px solid var(--gold-dark); margin-right: 15px;
+position: relative; flex-shrink: 0; transition: all 0.3s ease;
 }
 .magic-radio.selected .radio-dot { border-color: var(--gold); }
 .magic-radio.selected .radio-dot::after {
-content: ''; position: absolute;
-top: 50%; left: 50%; transform: translate(-50%, -50%);
+content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
 width: 10px; height: 10px; border-radius: 50%;
 background: var(--gold); box-shadow: 0 0 10px var(--gold);
 }
@@ -475,8 +447,7 @@ background: var(--gold); box-shadow: 0 0 10px var(--gold);
 /* === BADGE === */
 .badge-earned {
 display: inline-flex; align-items: center; gap: 10px;
-padding: 10px 25px;
-background: rgba(212,168,67,0.1);
+padding: 10px 25px; background: rgba(212,168,67,0.1);
 border: 1px solid var(--gold); border-radius: 25px;
 margin: 15px 0; animation: badge-appear 0.8s ease-out;
 }
@@ -503,23 +474,13 @@ display: flex; align-items: center; justify-content: center;
 background: rgba(10,10,18,0.8); backdrop-filter: blur(10px);
 cursor: pointer; transition: all 0.3s ease;
 }
-.seal-container:hover {
-transform: scale(1.1);
-box-shadow: 0 0 20px rgba(212,168,67,0.3);
-}
-.seal-count {
-font-family: 'Cinzel Decorative', serif;
-font-size: 1.2em; color: var(--gold);
-}
-.seal-label {
-font-family: 'Cinzel', serif; font-size: 0.6em;
-color: var(--gold-dark); margin-top: 4px; letter-spacing: 1px;
-}
+.seal-container:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(212,168,67,0.3); }
+.seal-count { font-family: 'Cinzel Decorative', serif; font-size: 1.2em; color: var(--gold); }
+.seal-label { font-family: 'Cinzel', serif; font-size: 0.6em; color: var(--gold-dark); margin-top: 4px; letter-spacing: 1px; }
 
 /* === BADGE PANEL === */
 .badge-panel {
-position: fixed; top: 0; right: -350px;
-width: 340px; height: 100%;
+position: fixed; top: 0; right: -350px; width: 340px; height: 100%;
 background: rgba(10,10,18,0.95); backdrop-filter: blur(20px);
 border-left: 1px solid rgba(212,168,67,0.3);
 z-index: 200; transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -533,28 +494,23 @@ opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
 }
 .badge-panel-overlay.open { opacity: 1; pointer-events: all; }
 .badge-panel h3 {
-font-family: 'Cinzel Decorative', serif;
-color: var(--gold); font-size: 1.2em;
-text-align: center; margin-bottom: 25px;
+font-family: 'Cinzel Decorative', serif; color: var(--gold);
+font-size: 1.2em; text-align: center; margin-bottom: 25px;
 }
 .badge-slot {
 display: flex; align-items: center; gap: 12px;
 padding: 10px 15px; margin: 8px 0; border-radius: 8px;
 border: 1px solid rgba(212,168,67,0.1); transition: all 0.3s ease;
 }
-.badge-slot.earned {
-border-color: rgba(212,168,67,0.4);
-background: rgba(212,168,67,0.05);
-}
+.badge-slot.earned { border-color: rgba(212,168,67,0.4); background: rgba(212,168,67,0.05); }
 .badge-slot.locked { opacity: 0.4; }
 .badge-slot .slot-icon { font-size: 1.5em; width: 40px; text-align: center; }
 .badge-slot .slot-info { flex: 1; }
 .badge-slot .slot-name { font-family: 'Cinzel', serif; font-size: 0.85em; color: var(--gold); }
 .badge-slot .slot-quality { font-family: 'Cormorant Garamond', serif; font-size: 0.8em; color: var(--parchment-dark); }
 .badge-panel-close {
-position: absolute; top: 15px; right: 15px;
-background: none; border: none; color: var(--gold);
-font-size: 1.5em; cursor: pointer; padding: 5px;
+position: absolute; top: 15px; right: 15px; background: none;
+border: none; color: var(--gold); font-size: 1.5em; cursor: pointer; padding: 5px;
 }
 
 /* === NIGHT SKY === */
@@ -566,10 +522,12 @@ background: linear-gradient(180deg, #000020, #000040, #000030);
 }
 
 /* === PATRONUS === */
-.patronus-container { width: 200px; height: 200px; margin: 20px auto; position: relative; display: flex; align-items: center; justify-content: center; }
+.patronus-container {
+width: 200px; height: 200px; margin: 20px auto;
+position: relative; display: flex; align-items: center; justify-content: center;
+}
 .patronus {
-font-size: 80px;
-animation: patronus-appear 2s ease-out;
+font-size: 80px; animation: patronus-appear 2s ease-out;
 filter: drop-shadow(0 0 20px rgba(100,180,255,0.8)) drop-shadow(0 0 40px rgba(100,180,255,0.4));
 }
 @keyframes patronus-appear {
@@ -582,35 +540,30 @@ filter: drop-shadow(0 0 20px rgba(100,180,255,0.8)) drop-shadow(0 0 40px rgba(10
 .diploma-container {
 background: linear-gradient(135deg, #f4e8c1, #e8d5a0, #f4e8c1);
 border: 3px solid var(--gold); border-radius: 5px;
-padding: 50px 40px; max-width: 550px; margin: 30px auto;
-position: relative;
+padding: 50px 40px; max-width: 550px; margin: 30px auto; position: relative;
 box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 60px rgba(212,168,67,0.2);
 color: #2a2a2a;
 }
 .diploma-container::before {
-content: ''; position: absolute;
-top: 10px; left: 10px; right: 10px; bottom: 10px;
-border: 1px solid var(--gold-dark); border-radius: 3px;
-pointer-events: none;
+content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
+border: 1px solid var(--gold-dark); border-radius: 3px; pointer-events: none;
 }
 .diploma-title {
-font-family: 'Cinzel Decorative', serif;
-font-size: 1.8em; color: var(--gryffindor-red); margin-bottom: 20px;
+font-family: 'Cinzel Decorative', serif; font-size: 1.8em;
+color: var(--gryffindor-red); margin-bottom: 20px;
 }
 .diploma-text {
-font-family: 'Cormorant Garamond', serif;
-font-size: 1.3em; line-height: 1.8; color: #3a3a3a; margin-bottom: 25px;
+font-family: 'Cormorant Garamond', serif; font-size: 1.3em;
+line-height: 1.8; color: #3a3a3a; margin-bottom: 25px;
 }
 .diploma-name {
-font-family: 'Cinzel Decorative', serif;
-font-size: 2em; color: var(--gold-dark); margin: 15px 0;
+font-family: 'Cinzel Decorative', serif; font-size: 2em;
+color: var(--gold-dark); margin: 15px 0;
 }
 .diploma-seal {
-width: 100px; height: 100px; margin: 20px auto;
-border-radius: 50%;
+width: 100px; height: 100px; margin: 20px auto; border-radius: 50%;
 background: radial-gradient(circle at 30% 30%, var(--gold-light), var(--gold), var(--gold-dark));
-display: flex; align-items: center; justify-content: center;
-font-size: 2.5em;
+display: flex; align-items: center; justify-content: center; font-size: 2.5em;
 box-shadow: 0 4px 15px rgba(212,168,67,0.5);
 animation: seal-glow 2s ease-in-out infinite;
 }
@@ -618,38 +571,24 @@ animation: seal-glow 2s ease-in-out infinite;
 0%, 100% { box-shadow: 0 4px 15px rgba(212,168,67,0.5); }
 50% { box-shadow: 0 4px 30px rgba(212,168,67,0.8), 0 0 50px rgba(212,168,67,0.3); }
 }
-.diploma-signatures {
-display: flex; justify-content: space-around; margin-top: 25px;
-}
-.signature {
-font-family: 'Cormorant Garamond', serif;
-font-style: italic; font-size: 1em; color: #5a5a5a;
-}
+.diploma-signatures { display: flex; justify-content: space-around; margin-top: 25px; }
+.signature { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1em; color: #5a5a5a; }
 
 /* === GIFT === */
 .gift-box {
-width: 150px; height: 150px; margin: 30px auto;
-cursor: pointer; font-size: 80px;
-display: flex; align-items: center; justify-content: center;
-animation: gift-float 3s ease-in-out infinite;
-transition: transform 0.3s ease;
+width: 150px; height: 150px; margin: 30px auto; cursor: pointer;
+font-size: 80px; display: flex; align-items: center; justify-content: center;
+animation: gift-float 3s ease-in-out infinite; transition: transform 0.3s ease;
 }
 .gift-box:hover { transform: scale(1.1); }
-@keyframes gift-float {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-15px); }
-}
+@keyframes gift-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 .gift-reveal {
 background: linear-gradient(135deg, rgba(212,168,67,0.1), rgba(10,10,18,0.8));
-border: 2px solid var(--gold); border-radius: 15px;
-padding: 40px; margin: 20px auto; max-width: 500px;
-text-align: center; animation: gift-reveal-anim 1s ease-out;
+border: 2px solid var(--gold); border-radius: 15px; padding: 40px;
+margin: 20px auto; max-width: 500px; text-align: center;
+animation: gift-reveal-anim 1s ease-out;
 }
-@keyframes gift-reveal-anim {
-0% { opacity: 0; transform: scale(0.8); }
-60% { transform: scale(1.05); }
-100% { opacity: 1; transform: scale(1); }
-}
+@keyframes gift-reveal-anim { 0% { opacity: 0; transform: scale(0.8); } 60% { transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
 
 /* === CREST === */
 .crest-assembly {
@@ -659,8 +598,7 @@ border: 2px solid var(--gold-dark); border-radius: 15px; overflow: hidden;
 .crest-quarter {
 position: absolute; width: 50%; height: 50%;
 display: flex; align-items: center; justify-content: center;
-font-size: 2.5em; transition: all 1s ease;
-opacity: 0; transform: scale(0.5);
+font-size: 2.5em; transition: all 1s ease; opacity: 0; transform: scale(0.5);
 }
 .crest-quarter.revealed { opacity: 1; transform: scale(1); }
 .crest-quarter:nth-child(1) { top: 0; left: 0; background: rgba(116,0,1,0.3); }
@@ -668,62 +606,61 @@ opacity: 0; transform: scale(0.5);
 .crest-quarter:nth-child(3) { bottom: 0; left: 0; background: rgba(236,185,57,0.3); }
 .crest-quarter:nth-child(4) { bottom: 0; right: 0; background: rgba(26,71,42,0.3); }
 
-/* === LIGHTNING === */
+/* === MISC === */
 .lightning {
 position: fixed; top: 0; left: 0; width: 100%; height: 100%;
 background: white; z-index: 9999; opacity: 0; pointer-events: none;
 }
 .lightning.flash { animation: lightning-flash 0.3s ease-out; }
 @keyframes lightning-flash { 0% { opacity: 0.7; } 100% { opacity: 0; } }
-
-/* === WAND TRAIL === */
 .wand-trail {
 position: fixed; width: 6px; height: 6px; border-radius: 50%;
 background: var(--gold-light); pointer-events: none; z-index: 50;
 box-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold-dark);
 animation: wand-fade 0.8s ease-out forwards;
 }
-@keyframes wand-fade {
-0% { transform: scale(1); opacity: 1; }
-100% { transform: scale(0); opacity: 0; }
-}
+@keyframes wand-fade { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(0); opacity: 0; } }
 
-/* === SOUND TOGGLE === */
-.sound-toggle {
+/* === SOUND & VOICE TOGGLES === */
+.controls-panel {
 position: fixed; bottom: 20px; right: 20px; z-index: 100;
+display: flex; flex-direction: column; gap: 8px; align-items: center;
+}
+.control-btn {
 width: 45px; height: 45px; border-radius: 50%;
-background: rgba(10,10,18,0.8);
-border: 1px solid var(--gold-dark);
+background: rgba(10,10,18,0.8); border: 1px solid var(--gold-dark);
 display: flex; align-items: center; justify-content: center;
-cursor: pointer; font-size: 1.3em;
-transition: all 0.3s ease; backdrop-filter: blur(10px);
+cursor: pointer; font-size: 1.3em; transition: all 0.3s ease;
+backdrop-filter: blur(10px); color: var(--parchment);
 }
-.sound-toggle:hover {
-border-color: var(--gold); background: rgba(212,168,67,0.1);
+.control-btn:hover { border-color: var(--gold); background: rgba(212,168,67,0.1); }
+.control-btn.off { opacity: 0.5; }
+
+/* === VOLUME SLIDER === */
+.volume-control {
+position: fixed; bottom: 75px; right: 20px; z-index: 100;
+display: none; flex-direction: column; align-items: center;
+background: rgba(10,10,18,0.9); border: 1px solid var(--gold-dark);
+border-radius: 10px; padding: 15px 10px; backdrop-filter: blur(10px);
+}
+.volume-control.visible { display: flex; }
+.volume-control label {
+font-family: 'Cinzel', serif; font-size: 0.7em;
+color: var(--gold-dark); margin-bottom: 5px;
+}
+.volume-slider {
+-webkit-appearance: none; width: 100px; height: 4px;
+background: var(--gold-dark); border-radius: 2px; outline: none;
+}
+.volume-slider::-webkit-slider-thumb {
+-webkit-appearance: none; width: 14px; height: 14px;
+border-radius: 50%; background: var(--gold); cursor: pointer;
 }
 
-/* === SCROLL ARROW === */
-.scroll-arrow {
-margin: 30px auto 0; text-align: center;
-animation: bounce 2s ease-in-out infinite;
-color: var(--gold-dark); font-size: 1.5em;
-cursor: pointer;
-}
-@keyframes bounce {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-8px); }
-}
-
-@keyframes pulse-glow {
-0%, 100% { opacity: 0.7; } 50% { opacity: 1; }
-}
-@keyframes fadeInUp {
-0% { opacity: 0; transform: translateY(30px); }
-100% { opacity: 1; transform: translateY(0); }
-}
+@keyframes pulse-glow { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+@keyframes fadeInUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
 .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
 
-/* === RESPONSIVE === */
 @media (max-width: 600px) {
 .scene { padding: 40px 15px 60px; }
 .character-name { font-size: 1.4em; }
@@ -746,8 +683,15 @@ cursor: pointer;
 <body>
 
 <div id="preloader">
-<h2>✨ Lumos ✨</h2>
-<div class="wand-loader"><div class="wand-loader-fill" id="loader-fill"></div></div>
+  <h2>✨ Lumos ✨</h2>
+  <div class="wand-loader">
+    <div class="wand-loader-fill" id="loader-fill"></div>
+  </div>
+  <button class="magic-btn" id="preloader-start" 
+          style="display:none; margin-top:30px;" 
+          onclick="dismissPreloader()">
+    Начать магию 🪄
+  </button>
 </div>
 
 <div class="lightning" id="lightning"></div>
@@ -768,7 +712,33 @@ cursor: pointer;
 <div id="badge-list"></div>
 </div>
 
-<div class="sound-toggle" id="sound-toggle" onclick="toggleSound()">🔊</div>
+<!-- CONTROLS -->
+<div class="controls-panel">
+  <div class="control-btn" id="music-toggle" onclick="toggleMusic()" title="Фоновая музыка">🎵</div>
+  <div class="control-btn" id="sfx-toggle" onclick="toggleSFX()" title="Звуковые эффекты">🔮</div>
+  <div class="control-btn" id="voice-toggle" onclick="toggleVoice()" title="Озвучка персонажей">🎙️</div>
+  <div class="control-btn" id="volume-btn" onclick="toggleVolumePanel()" title="Громкость">🔊</div>
+</div>
+
+<!-- MUSIC INDICATOR -->
+<div class="music-indicator stopped" id="music-indicator">
+  <div class="music-bars">
+    <div class="music-bar"></div>
+    <div class="music-bar"></div>
+    <div class="music-bar"></div>
+    <div class="music-bar"></div>
+  </div>
+  <span>♪ Hedwig's Theme</span>
+</div>
+
+<div class="volume-control" id="volume-panel">
+  <label>🎵 Музыка</label>
+  <input type="range" class="volume-slider" id="music-vol-slider" min="0" max="100" value="30" oninput="updateMusicVolume(this.value)">
+  <label style="margin-top:10px;">🔮 Эффекты</label>
+  <input type="range" class="volume-slider" id="sfx-volume" min="0" max="100" value="50" oninput="updateSFXVolume(this.value)">
+  <label style="margin-top:10px;">🎙️ Голос</label>
+  <input type="range" class="volume-slider" id="voice-volume" min="0" max="100" value="80" oninput="updateVoiceVolume(this.value)">
+</div>
 
 <div id="scene-container">
 
@@ -778,6 +748,7 @@ cursor: pointer;
 <div class="character-avatar">🏰</div>
 <div class="character-name">Хогвартс</div>
 <div class="character-title">Школа Чародейства и Волшебства</div>
+<div class="voice-indicator stopped" id="voice-ind-0"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-0"></div>
 <div id="btn-start-wrap" style="display:none;margin-top:30px;">
 <button class="magic-btn" onclick="nextScene(1)">Войти в Хогвартс ✨</button>
@@ -791,6 +762,7 @@ cursor: pointer;
 <div class="character-avatar">🐱</div>
 <div class="character-name">Минерва Макгонагалл</div>
 <div class="character-title">Профессор Трансфигурации</div>
+<div class="voice-indicator stopped" id="voice-ind-1"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-1"></div>
 <div class="task-area" id="task-1" style="display:none;">
 <div class="task-title">🔍 Найди 5 спрятанных предметов</div>
@@ -806,14 +778,8 @@ cursor: pointer;
 <div class="castle-window" style="top:50%;left:65%;"></div>
 </div>
 <div class="castle-tower t1"><div class="castle-window" style="top:30%;left:30%;"></div></div>
-<div class="castle-tower t2">
-<div class="castle-window" style="top:20%;left:30%;"></div>
-<div class="castle-window" style="top:50%;left:30%;"></div>
-</div>
-<div class="castle-tower t3">
-<div class="castle-window" style="top:25%;left:35%;"></div>
-<div class="castle-window" style="top:55%;left:35%;"></div>
-</div>
+<div class="castle-tower t2"><div class="castle-window" style="top:20%;left:30%;"></div><div class="castle-window" style="top:50%;left:30%;"></div></div>
+<div class="castle-tower t3"><div class="castle-window" style="top:25%;left:35%;"></div><div class="castle-window" style="top:55%;left:35%;"></div></div>
 <div class="castle-tower t4"><div class="castle-window" style="top:20%;left:30%;"></div></div>
 <div class="castle-tower t5"><div class="castle-window" style="top:35%;left:30%;"></div></div>
 <div class="hogwarts-ground"><div class="hogwarts-lake"></div></div>
@@ -839,6 +805,7 @@ cursor: pointer;
 <div class="character-avatar">📚</div>
 <div class="character-name">Гермиона Грейнджер</div>
 <div class="character-title">Лучшая ученица Хогвартса</div>
+<div class="voice-indicator stopped" id="voice-ind-2"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-2"></div>
 <div class="task-area" id="task-2" style="display:none;">
 <div class="task-title">🦉 Три загадки</div>
@@ -858,6 +825,7 @@ cursor: pointer;
 <div class="character-avatar">🌿</div>
 <div class="character-name">Невилл Долгопупс</div>
 <div class="character-title">Профессор Травологии</div>
+<div class="voice-indicator stopped" id="voice-ind-3"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-3"></div>
 <div class="task-area" id="task-3" style="display:none;">
 <div class="task-title">🌿 За 30 секунд найди зелёный предмет вокруг себя</div>
@@ -865,7 +833,7 @@ cursor: pointer;
 <svg viewBox="0 0 158 158"><circle cx="79" cy="79" r="75" id="timer-circle-3"/></svg>
 <span class="timer-number" id="timer-number-3">30</span>
 </div>
-<button class="magic-btn" id="found-green-btn" onclick="foundGreen()">✔ Нашла!</button>
+<button class="magic-btn" onclick="foundGreen()">✔ Нашла!</button>
 </div>
 <div id="after-task-3" style="display:none;">
 <div class="dialogue-container" id="dialogue-3-after"></div>
@@ -881,6 +849,7 @@ cursor: pointer;
 <div class="character-avatar">🌕</div>
 <div class="character-name">Римус Люпин</div>
 <div class="character-title">Профессор Защиты от Тёмных Искусств</div>
+<div class="voice-indicator stopped" id="voice-ind-4"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-4"></div>
 <div class="task-area" id="task-4" style="display:none;">
 <div class="task-title">🌕 Закрой глаза и сделай три глубоких вдоха</div>
@@ -902,6 +871,7 @@ cursor: pointer;
 <div class="character-avatar">⚡</div>
 <div class="character-name">Гарри Поттер</div>
 <div class="character-title">Мальчик, Который Выжил</div>
+<div class="voice-indicator stopped" id="voice-ind-5"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-5"></div>
 <div class="task-area" id="task-5" style="display:none;">
 <div class="task-title">⚡ Напиши одно качество, которым ты гордишься</div>
@@ -923,6 +893,7 @@ cursor: pointer;
 <div class="character-avatar">♟️</div>
 <div class="character-name">Рон Уизли</div>
 <div class="character-title">Верный друг</div>
+<div class="voice-indicator stopped" id="voice-ind-6"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-6"></div>
 <div class="task-area" id="task-6" style="display:none;">
 <div class="task-title">🍫 Что вкуснее?</div>
@@ -947,6 +918,7 @@ cursor: pointer;
 <div class="character-avatar">🌙</div>
 <div class="character-name">Полумна Лавгуд</div>
 <div class="character-title">Видящая невидимое</div>
+<div class="voice-indicator stopped" id="voice-ind-7"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-7"></div>
 <div class="task-area" id="task-7" style="display:none;">
 <div class="task-title">🌙 Посмотри на ночное небо 15 секунд</div>
@@ -970,6 +942,7 @@ cursor: pointer;
 <div class="character-avatar">🧦</div>
 <div class="character-name">Добби</div>
 <div class="character-title">Свободный домовой эльф</div>
+<div class="voice-indicator stopped" id="voice-ind-8"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-8"></div>
 <div class="task-area" id="task-8" style="display:none;">
 <div class="task-title">🧦 Погладь себя по голове 😊</div>
@@ -990,6 +963,7 @@ cursor: pointer;
 <div class="character-avatar">🧪</div>
 <div class="character-name">Северус Снейп</div>
 <div class="character-title">Мастер Зельеварения</div>
+<div class="voice-indicator stopped" id="voice-ind-9"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-9"></div>
 <div class="task-area" id="task-9" style="display:none;">
 <div class="task-title">🧪 Для Зелья удачи понадобится:</div>
@@ -1014,6 +988,7 @@ cursor: pointer;
 <div class="character-avatar">🐾</div>
 <div class="character-name">Рубеус Хагрид</div>
 <div class="character-title">Хранитель Ключей Хогвартса</div>
+<div class="voice-indicator stopped" id="voice-ind-10"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-10"></div>
 <div class="task-area" id="task-10" style="display:none;">
 <div class="task-title">💛 Обними того, кто рядом</div>
@@ -1036,6 +1011,7 @@ cursor: pointer;
 <div class="character-avatar">🐺</div>
 <div class="character-name">Сириус Блэк</div>
 <div class="character-title">Бродяга</div>
+<div class="voice-indicator stopped" id="voice-ind-11"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-11"></div>
 <div id="after-task-11" style="display:none;">
 <div class="badge-earned"><span class="badge-icon">🐺</span><span class="badge-label">Преданность</span></div>
@@ -1050,6 +1026,7 @@ cursor: pointer;
 <div class="character-avatar">🪄</div>
 <div class="character-name">Альбус Дамблдор</div>
 <div class="character-title">Директор Хогвартса</div>
+<div class="voice-indicator stopped" id="voice-ind-12"><div class="voice-bars"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>Озвучка</div>
 <div class="dialogue-container" id="dialogue-12"></div>
 <div id="diploma-area" style="display:none;">
 <div class="diploma-container">
@@ -1091,17 +1068,13 @@ cursor: pointer;
 </div>
 <div id="finale-reveal" style="display:none;">
 <div class="gift-reveal">
-<h2 style="font-family:'Cinzel Decorative',serif;color:var(--gold);font-size:1.8em;margin-bottom:20px;">
-🎉 Wildberries 🎉
-</h2>
+<h2 style="font-family:'Cinzel Decorative',serif;color:var(--gold);font-size:1.8em;margin-bottom:20px;">🎉 Дикие ягодки будут в тайной комнате 💌</h2>
 <p style="font-family:'Cormorant Garamond',serif;font-size:1.3em;line-height:1.8;color:var(--parchment);margin:20px 0;">
 Даже волшебники знают,<br>что некоторые желания лучше исполнять без магии.<br><br>
 Пусть этот подарок поможет выбрать<br>именно то, что принесёт тебе радость.
 </p>
 <div style="margin:30px 0;padding:20px;border:1px solid var(--gold);border-radius:10px;">
-<p style="font-family:'Cinzel Decorative',serif;font-size:2em;color:var(--gold);">
-С днём рождения, Юля Преколдесная! ✨
-</p>
+<p style="font-family:'Cinzel Decorative',serif;font-size:2em;color:var(--gold);">С днём рождения,<br> Юля Преколдесная! ✨</p>
 </div>
 <div id="all-badges-display" style="margin-top:20px;"></div>
 </div>
@@ -1112,591 +1085,995 @@ cursor: pointer;
 </div>
 
 <script>
-// ===== AUDIO =====
-let soundEnabled = true;
+// ============================================================
+// 🎙️ VOICE AUDIO SYSTEM — НАСТРОЙКА ОЗВУЧКИ
+// ============================================================
+// Для каждой сцены можно указать:
+//   intro: URL аудиофайла для вступительной речи персонажа
+//   after: URL аудиофайла для речи после выполнения задания
+//
+// Поддерживаемые форматы: mp3, ogg, wav
+// Можно использовать прямые ссылки, GitHub raw, Google Drive и т.д.
+//
+// Пример с Google Drive:
+//   Замените FILE_ID на ID файла
+//   'https://drive.google.com/uc?export=download&id=FILE_ID'
+//
+// Пример с GitHub (raw):
+//   'https://raw.githubusercontent.com/user/repo/main/audio/narrator.mp3'
+//
+// Пример с внешнего хостинга:
+//   'https://example.com/audio/mcgonagall-intro.mp3'
+// ============================================================
+// ============================================================
+// 🎵 ФОНОВАЯ МУЗЫКА
+// ============================================================
+// Вставьте URL на mp3 файл с темой Гарри Поттера (Hedwig's Theme)
+// Музыка будет играть зацикленно на протяжении всего испытания
+//
+// Где взять:
+// 1. Скачать mp3 и положить рядом с index.html в папку audio/
+//    backgroundMusicURL = 'audio/hedwig-theme.mp3'
+//
+// 2. Загрузить на GitHub:
+//    backgroundMusicURL = 'https://raw.githubusercontent.com/user/repo/main/audio/hedwig.mp3'
+//
+// 3. Google Drive (замените FILE_ID):
+//    backgroundMusicURL = 'https://drive.google.com/uc?export=download&id=FILE_ID'
+//
+// 4. Любой прямой URL на mp3:
+//    backgroundMusicURL = 'https://example.com/hedwig-theme.mp3'
+// ============================================================
+
+const backgroundMusicURL = 'audio/Main_Theme.mp3'; // <- ВСТАВЬТЕ URL СЮДА
+
+const voiceConfig = {
+  // Сцена 0: Рассказчик
+  0: {
+    intro: 'audio/0 Интро/0 Intro.mp3', // <- Вставьте URL аудио вступления рассказчика
+    after: ''  // <- (не используется для рассказчика)
+  },
+
+  // Сцена 1: Макгонагалл
+  1: {
+    intro: 'audio/1 Макгонагалл/Макгонагалл_1.mp3', // <- URL: «Миссис Юлия. Опоздания в Хогвартсе...»
+    after: 'audio/1 Макгонагалл/Макгонагалл_2.mp3'  // <- URL: «Отлично. Внимательность никогда...»
+  },
+
+  // Сцена 2: Гермиона
+  2: {
+    intro: 'audio/2 Гермиона/Гермиона_1.mp3', // <- URL: «Хорошо. Но одного внимания...»
+    after: 'audio/2 Гермиона/Гермиона_2.mp3'  // <- URL: «Прекрасно. Иногда знания...»
+  },
+
+  // Сцена 3: Невилл
+  3: {
+    intro: 'audio/3 Невилл/Невилл_1.mp3', // <- URL: «Честно говоря... Я тоже часто...»
+    after: 'audio/3 Невилл/Невилл_2.mp3'  // <- URL: «Отлично! Видишь? Смелость...»
+  },
+
+  // Сцена 4: Люпин
+  4: {
+    intro: 'audio/4 Люпин/Люпин_1.mp3', // <- URL: «Самые сильные волшебники...»
+    after: 'audio/4 Люпин/Люпин_2.mp3'  // <- URL: «Именно из таких воспоминаний...»
+  },
+
+  // Сцена 5: Гарри
+  5: {
+    intro: 'audio/5 Гарри/Гарри_1.mp3', // <- URL: «Привет. Знаешь... За свою жизнь...»
+    after: 'audio/5 Гарри/Гарри_2.mp3'  // <- URL: «Это действительно важно...»
+  },
+
+  // Сцена 6: Рон
+  6: {
+    intro: 'audio/6 Рон/Рон_1.mp3', // <- URL: «Отлично. Теперь серьёзные...»
+    after: 'audio/6 Рон/Рон_2.mp3'  // <- URL: «Полностью согласен...»
+  },
+
+  // Сцена 7: Полумна
+  7: {
+    intro: 'audio/7 Полумна/Полумна_1.mp3', // <- URL: «Морщерогие кизляки сегодня...»
+    after: 'audio/7 Полумна/Полумна_2.mp3'  // <- URL: «Теперь я тоже увидела чудо...»
+  },
+
+  // Сцена 8: Добби
+  8: {
+    intro: 'audio/8 Добби/Добби_1.mp3', // <- URL: «Добби очень рад видеть...»
+    after: 'audio/8 Добби/Добби_2.mp3'  // <- URL: «Добби считает, что хорошие люди...»
+  },
+
+  // Сцена 9: Снейп
+  9: {
+    intro: 'audio/9 Снейп/Снейп_1.mp3', // <- URL: «Миссис Юлия. Ваши результаты...»
+    after: 'audio/9 Снейп/Снейп_2.mp3'  // <- URL: «Хм... Я бы выбрал иначе...»
+  },
+
+  // Сцена 10: Хагрид
+  10: {
+    intro: '', // <- URL: «Ну здравствуй! Я всё ждал...»
+    after: ''  // <- URL: «Вот теперь совсем другое дело...»
+  },
+
+  // Сцена 11: Сириус
+  11: {
+    intro: 'audio/11 Сириус/Сириус.mp3', // <- URL: «Привет, Юля. Если ты дошла...»
+    after: ''  // <- (не используется, переход в intro)
+  },
+
+  // Сцена 12: Дамблдор
+  12: {
+    intro: 'audio/12 Дамблдор/Дамблдор.mp3', // <- URL: «Счастье можно найти даже...»
+    after: ''  // <- (не используется)
+  }
+};
+
+// ============================================================
+// AUDIO ENGINE
+// ============================================================
+let sfxEnabled = true;
+let voiceEnabled = true;
+let musicEnabled = true;
+let sfxVolume = 0.5;
+let voiceVolume = 0.8;
+let musicVolume = 0.3;
+
 const AudioCtx = window.AudioContext || window.webkitAudioContext;
 let audioCtx;
 
+let currentVoiceAudio = null;
+let currentVoiceScene = -1;
+let backgroundMusic = null;
+let musicStarted = false;
+let userInteracted = false;
+
 function initAudio() { if (!audioCtx) audioCtx = new AudioCtx(); }
-function toggleSound() {
-soundEnabled = !soundEnabled;
-document.getElementById('sound-toggle').textContent = soundEnabled ? '🔊' : '🔇';
-if (soundEnabled) initAudio();
+
+// --- Background Music ---
+function initBackgroundMusic() {
+  if (backgroundMusic || !backgroundMusicURL || backgroundMusicURL === '') return;
+
+  backgroundMusic = new Audio(backgroundMusicURL);
+  backgroundMusic.loop = true;
+  backgroundMusic.volume = musicVolume;
+  //backgroundMusic.crossOrigin = 'anonymous';
+  backgroundMusic.preload = 'auto';
+
+  backgroundMusic.addEventListener('error', (e) => {
+    console.warn('Background music failed to load:', e);
+    backgroundMusic = null;
+  });
+
+  backgroundMusic.addEventListener('canplaythrough', () => {
+    console.log('Background music ready');
+  });
 }
 
+function startBackgroundMusic() {
+  if (!musicEnabled || musicStarted || !backgroundMusic) return;
+  backgroundMusic.play().then(() => {
+    musicStarted = true;
+    updateMusicIndicator();
+    console.log('Background music started');
+  }).catch(e => {
+    console.warn('Music autoplay blocked, will retry on interaction:', e);
+  });
+}
+
+function tryStartMusic() {
+  if (!userInteracted) {
+    userInteracted = true;
+    if (backgroundMusic && !musicStarted && musicEnabled) {
+      startBackgroundMusic();
+    }
+  }
+}
+
+function toggleMusic() {
+  musicEnabled = !musicEnabled;
+  const btn = document.getElementById('music-toggle');
+  btn.classList.toggle('off', !musicEnabled);
+  btn.title = musicEnabled ? 'Музыка: ВКЛ' : 'Музыка: ВЫКЛ';
+
+  if (backgroundMusic) {
+    if (musicEnabled) {
+      backgroundMusic.play().then(() => { musicStarted = true; }).catch(() => {});
+    } else {
+      backgroundMusic.pause();
+      musicStarted = false;
+    }
+  }
+  updateMusicIndicator();
+}
+
+function updateMusicVolume(val) {
+  musicVolume = val / 100;
+  if (backgroundMusic) backgroundMusic.volume = musicVolume;
+}
+
+function updateMusicIndicator() {
+  const ind = document.getElementById('music-indicator');
+  if (!ind) return;
+  if (musicEnabled && musicStarted) {
+    ind.classList.remove('stopped', 'paused');
+  } else if (musicEnabled && !musicStarted) {
+    ind.classList.add('paused');
+    ind.classList.remove('stopped');
+  } else {
+    ind.classList.add('stopped');
+  }
+}
+
+// Temporarily lower music volume during voice playback
+function duckMusic() {
+  if (backgroundMusic && musicStarted) {
+    backgroundMusic.volume = musicVolume * 0.25;
+  }
+}
+
+function unduckMusic() {
+  if (backgroundMusic && musicStarted) {
+    // Smooth volume restore
+    let currentVol = backgroundMusic.volume;
+    const targetVol = musicVolume;
+    const step = (targetVol - currentVol) / 20;
+    const interval = setInterval(() => {
+      currentVol += step;
+      if ((step > 0 && currentVol >= targetVol) || (step < 0 && currentVol <= targetVol)) {
+        backgroundMusic.volume = targetVol;
+        clearInterval(interval);
+      } else {
+        backgroundMusic.volume = currentVol;
+      }
+    }, 50);
+  }
+}
+
+// --- SFX Controls ---
+function toggleSFX() {
+  sfxEnabled = !sfxEnabled;
+  const btn = document.getElementById('sfx-toggle');
+  btn.classList.toggle('off', !sfxEnabled);
+  btn.title = sfxEnabled ? 'Звуковые эффекты: ВКЛ' : 'Звуковые эффекты: ВЫКЛ';
+}
+
+function toggleVoice() {
+  voiceEnabled = !voiceEnabled;
+  const btn = document.getElementById('voice-toggle');
+  btn.classList.toggle('off', !voiceEnabled);
+  btn.title = voiceEnabled ? 'Озвучка: ВКЛ' : 'Озвучка: ВЫКЛ';
+  if (!voiceEnabled) stopVoice();
+}
+
+function toggleVolumePanel() {
+  document.getElementById('volume-panel').classList.toggle('visible');
+}
+
+function updateSFXVolume(val) { sfxVolume = val / 100; }
+function updateVoiceVolume(val) {
+  voiceVolume = val / 100;
+  if (currentVoiceAudio) currentVoiceAudio.volume = voiceVolume;
+}
+
+// --- Voice Playback ---
+function playVoice(sceneNum, type) {
+  if (!voiceEnabled) return;
+  const config = voiceConfig[sceneNum];
+  if (!config) return;
+  const url = config[type];
+  if (!url || url === '') return;
+
+  stopVoice();
+  duckMusic(); // Lower background music during voice
+
+  currentVoiceScene = sceneNum;
+  currentVoiceAudio = new Audio(url);
+  currentVoiceAudio.volume = voiceVolume;
+  //currentVoiceAudio.crossOrigin = 'anonymous';
+
+  const indicator = document.getElementById('voice-ind-' + sceneNum);
+  if (indicator) indicator.classList.remove('stopped', 'paused');
+
+  currentVoiceAudio.addEventListener('ended', () => {
+    if (indicator) indicator.classList.add('stopped');
+    currentVoiceAudio = null;
+    currentVoiceScene = -1;
+    unduckMusic(); // Restore background music volume
+  });
+
+  currentVoiceAudio.addEventListener('error', (e) => {
+    console.warn('Voice audio error for scene ' + sceneNum + ':', e);
+    if (indicator) indicator.classList.add('stopped');
+    currentVoiceAudio = null;
+    unduckMusic();
+  });
+
+  currentVoiceAudio.play().catch(e => {
+    console.warn('Voice autoplay blocked:', e);
+    if (indicator) indicator.classList.add('stopped');
+    unduckMusic();
+  });
+}
+
+function stopVoice() {
+  if (currentVoiceAudio) {
+    currentVoiceAudio.pause();
+    currentVoiceAudio.currentTime = 0;
+    currentVoiceAudio = null;
+  }
+  document.querySelectorAll('.voice-indicator').forEach(el => {
+    el.classList.add('stopped');
+  });
+  currentVoiceScene = -1;
+  unduckMusic();
+}
+
+// --- SFX Tones ---
 function playTone(freq, dur, type='sine', vol=0.1) {
-if (!soundEnabled || !audioCtx) return;
-try {
-const o = audioCtx.createOscillator(), g = audioCtx.createGain();
-o.type = type; o.frequency.setValueAtTime(freq, audioCtx.currentTime);
-g.gain.setValueAtTime(vol, audioCtx.currentTime);
-g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
-o.connect(g); g.connect(audioCtx.destination);
-o.start(); o.stop(audioCtx.currentTime + dur);
-} catch(e) {}
+  if (!sfxEnabled || !audioCtx) return;
+  try {
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.type = type; o.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    const v = vol * sfxVolume;
+    g.gain.setValueAtTime(v, audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + dur);
+    o.connect(g); g.connect(audioCtx.destination);
+    o.start(); o.stop(audioCtx.currentTime + dur);
+  } catch(e) {}
 }
 function playMagicSound() {
-playTone(523,0.3,'sine',0.08);
-setTimeout(()=>playTone(659,0.3,'sine',0.08),100);
-setTimeout(()=>playTone(784,0.4,'sine',0.06),200);
+  playTone(523,0.3,'sine',0.08);
+  setTimeout(()=>playTone(659,0.3,'sine',0.08),100);
+  setTimeout(()=>playTone(784,0.4,'sine',0.06),200);
 }
 function playSuccessSound() {
-playTone(523,0.2,'sine',0.08);
-setTimeout(()=>playTone(659,0.2,'sine',0.08),150);
-setTimeout(()=>playTone(784,0.2,'sine',0.08),300);
-setTimeout(()=>playTone(1047,0.5,'sine',0.06),450);
+  playTone(523,0.2,'sine',0.08);
+  setTimeout(()=>playTone(659,0.2,'sine',0.08),150);
+  setTimeout(()=>playTone(784,0.2,'sine',0.08),300);
+  setTimeout(()=>playTone(1047,0.5,'sine',0.06),450);
 }
 function playClickSound() { playTone(800,0.1,'sine',0.05); }
 function playRevealSound() {
-playTone(440,0.15,'triangle',0.06);
-setTimeout(()=>playTone(554,0.15,'triangle',0.06),100);
-setTimeout(()=>playTone(659,0.3,'triangle',0.05),200);
+  playTone(440,0.15,'triangle',0.06);
+  setTimeout(()=>playTone(554,0.15,'triangle',0.06),100);
+  setTimeout(()=>playTone(659,0.3,'triangle',0.05),200);
 }
 function playDramaticSound() {
-playTone(220,0.5,'sawtooth',0.04);
-setTimeout(()=>playTone(262,0.5,'sawtooth',0.04),300);
-setTimeout(()=>playTone(330,0.8,'sawtooth',0.03),600);
+  playTone(220,0.5,'sawtooth',0.04);
+  setTimeout(()=>playTone(262,0.5,'sawtooth',0.04),300);
+  setTimeout(()=>playTone(330,0.8,'sawtooth',0.03),600);
 }
+
+// Убираем синтезированную мелодию Хедвиг — теперь играет настоящая фоновая музыка
 function playHedwigTheme() {
-const n=[{f:392,d:0.3},{f:494,d:0.15},{f:466,d:0.3},{f:494,d:0.15},{f:587,d:0.3},{f:554,d:0.6},{f:494,d:0.3},{f:466,d:0.3},{f:494,d:0.15},{f:466,d:0.3},{f:494,d:0.15},{f:523,d:0.3},{f:494,d:0.6}];
-let t=0;n.forEach(x=>{setTimeout(()=>playTone(x.f,x.d*0.8,'sine',0.06),t*1000);t+=x.d*0.6;});
+  // Оставлено для обратной совместимости, но теперь не играет
+  // (фоновая музыка уже играет постоянно)
 }
 
-// ===== STARS =====
+// ============================================================
+// STARS & PARTICLES
+// ============================================================
 function createStars() {
-const c = document.getElementById('stars-bg');
-for (let i=0;i<150;i++) {
-const s=document.createElement('div'); s.className='star';
-s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%';
-const sz=Math.random()*2.5+0.5;
-s.style.width=sz+'px'; s.style.height=sz+'px';
-s.style.animationDuration=(Math.random()*3+2)+'s';
-s.style.animationDelay=Math.random()*5+'s';
-c.appendChild(s);
+  const c=document.getElementById('stars-bg');
+  for(let i=0;i<150;i++){
+    const s=document.createElement('div');s.className='star';
+    s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+    const sz=Math.random()*2.5+0.5;s.style.width=sz+'px';s.style.height=sz+'px';
+    s.style.animationDuration=(Math.random()*3+2)+'s';
+    s.style.animationDelay=Math.random()*5+'s';c.appendChild(s);
+  }
 }
-}
-
-// ===== PARTICLES =====
 function createParticles() {
-const c=document.getElementById('particles-container');
-setInterval(()=>{
-if(document.hidden)return;
-const p=document.createElement('div');p.className='particle';
-p.style.left=Math.random()*100+'%';
-p.style.animationDuration=(Math.random()*8+6)+'s';
-const sz=Math.random()*3+1;p.style.width=sz+'px';p.style.height=sz+'px';
-c.appendChild(p);setTimeout(()=>p.remove(),15000);
-},500);
+  const c=document.getElementById('particles-container');
+  setInterval(()=>{
+    if(document.hidden)return;
+    const p=document.createElement('div');p.className='particle';
+    p.style.left=Math.random()*100+'%';
+    p.style.animationDuration=(Math.random()*8+6)+'s';
+    const sz=Math.random()*3+1;p.style.width=sz+'px';p.style.height=sz+'px';
+    c.appendChild(p);setTimeout(()=>p.remove(),15000);
+  },500);
 }
 
-// ===== WAND TRAIL =====
+// Wand trail
 document.addEventListener('mousemove',e=>{
-if(Math.random()>0.7)return;
-const t=document.createElement('div');t.className='wand-trail';
-t.style.left=e.clientX+'px';t.style.top=e.clientY+'px';
-document.body.appendChild(t);setTimeout(()=>t.remove(),800);
+  if(Math.random()>0.7)return;
+  const t=document.createElement('div');t.className='wand-trail';
+  t.style.left=e.clientX+'px';t.style.top=e.clientY+'px';
+  document.body.appendChild(t);setTimeout(()=>t.remove(),800);
 });
 document.addEventListener('click',e=>{
-initAudio();
-for(let i=0;i<6;i++){
-const s=document.createElement('div');s.className='wand-trail';
-const a=(Math.PI*2/6)*i,d=30+Math.random()*20;
-s.style.left=(e.clientX+Math.cos(a)*d)+'px';
-s.style.top=(e.clientY+Math.sin(a)*d)+'px';
-document.body.appendChild(s);setTimeout(()=>s.remove(),800);
-}
+  initAudio();
+  for(let i=0;i<6;i++){
+    const s=document.createElement('div');s.className='wand-trail';
+    const a=(Math.PI*2/6)*i,d=30+Math.random()*20;
+    s.style.left=(e.clientX+Math.cos(a)*d)+'px';
+    s.style.top=(e.clientY+Math.sin(a)*d)+'px';
+    document.body.appendChild(s);setTimeout(()=>s.remove(),800);
+  }
 });
 
-// ===== BADGES =====
+// ============================================================
+// BADGES
+// ============================================================
 const badges=[
-{id:'mcgonagall',icon:'🦉',name:'Макгонагалл',quality:'Внимательность',earned:false},
-{id:'hermione',icon:'📚',name:'Гермиона',quality:'Мудрость',earned:false},
-{id:'neville',icon:'🌿',name:'Невилл',quality:'Смелость',earned:false},
-{id:'lupin',icon:'🌕',name:'Люпин',quality:'Спокойствие',earned:false},
-{id:'harry',icon:'⚡',name:'Гарри',quality:'Верность себе',earned:false},
-{id:'ron',icon:'♟️',name:'Рон',quality:'Чувство юмора',earned:false},
-{id:'luna',icon:'🌙',name:'Полумна',quality:'Умение видеть чудеса',earned:false},
-{id:'dobby',icon:'🧦',name:'Добби',quality:'Доброта',earned:false},
-{id:'snape',icon:'🧪',name:'Снейп',quality:'Терпение',earned:false},
-{id:'hagrid',icon:'🐾',name:'Хагрид',quality:'Большое сердце',earned:false},
-{id:'sirius',icon:'🐺',name:'Сириус',quality:'Преданность',earned:false},
-{id:'dumbledore',icon:'🪄',name:'Дамблдор',quality:'Свет',earned:false},
+  {id:'mcgonagall',icon:'🦉',name:'Макгонагалл',quality:'Внимательность',earned:false},
+  {id:'hermione',icon:'📚',name:'Гермиона',quality:'Мудрость',earned:false},
+  {id:'neville',icon:'🌿',name:'Невилл',quality:'Смелость',earned:false},
+  {id:'lupin',icon:'🌕',name:'Люпин',quality:'Спокойствие',earned:false},
+  {id:'harry',icon:'⚡',name:'Гарри',quality:'Верность себе',earned:false},
+  {id:'ron',icon:'♟️',name:'Рон',quality:'Чувство юмора',earned:false},
+  {id:'luna',icon:'🌙',name:'Полумна',quality:'Умение видеть чудеса',earned:false},
+  {id:'dobby',icon:'🧦',name:'Добби',quality:'Доброта',earned:false},
+  {id:'snape',icon:'🧪',name:'Снейп',quality:'Терпение',earned:false},
+  {id:'hagrid',icon:'🐾',name:'Хагрид',quality:'Большое сердце',earned:false},
+  {id:'sirius',icon:'🐺',name:'Сириус',quality:'Преданность',earned:false},
+  {id:'dumbledore',icon:'🪄',name:'Дамблдор',quality:'Свет',earned:false},
 ];
 
 function renderBadgePanel(){
-const l=document.getElementById('badge-list');l.innerHTML='';
-badges.forEach(b=>{
-const s=document.createElement('div');
-s.className='badge-slot '+(b.earned?'earned':'locked');
-s.innerHTML=`<span class="slot-icon">${b.earned?b.icon:'🔒'}</span><div class="slot-info"><div class="slot-name">${b.name}</div><div class="slot-quality">${b.earned?b.quality:'???'}</div></div>`;
-l.appendChild(s);
-});
+  const l=document.getElementById('badge-list');l.innerHTML='';
+  badges.forEach(b=>{
+    const s=document.createElement('div');
+    s.className='badge-slot '+(b.earned?'earned':'locked');
+    s.innerHTML=`<span class="slot-icon">${b.earned?b.icon:'🔒'}</span><div class="slot-info"><div class="slot-name">${b.name}</div><div class="slot-quality">${b.earned?b.quality:'???'}</div></div>`;
+    l.appendChild(s);
+  });
 }
-
 function earnBadge(id){
-const b=badges.find(x=>x.id===id);
-if(b&&!b.earned){b.earned=true;
-document.getElementById('seal-count').textContent=badges.filter(x=>x.earned).length;
-renderBadgePanel();playSuccessSound();}
+  const b=badges.find(x=>x.id===id);
+  if(b&&!b.earned){b.earned=true;
+  document.getElementById('seal-count').textContent=badges.filter(x=>x.earned).length;
+  renderBadgePanel();playSuccessSound();}
 }
-
 function toggleBadgePanel(){
-document.getElementById('badge-panel').classList.toggle('open');
-document.getElementById('badge-overlay').classList.toggle('open');
+  document.getElementById('badge-panel').classList.toggle('open');
+  document.getElementById('badge-overlay').classList.toggle('open');
 }
 
-// ===== TYPEWRITER =====
+// ============================================================
+// TYPEWRITER
+// ============================================================
 function typeWriter(elId, texts, cb, speed=40){
-const c=document.getElementById(elId);c.innerHTML='';
-let ti=0,ci=0;
-function newLine(){
-const p=document.createElement('p');p.className='dialogue-text';
-p.style.marginBottom='8px';p.style.opacity='0';
-p.style.animation='fadeInUp 0.5s ease-out forwards';
-c.appendChild(p);return p;
-}
-let cur=newLine();
-const cursor=document.createElement('span');cursor.className='typewriter-cursor';
-function type(){
-if(ti>=texts.length){cursor.remove();if(cb)setTimeout(cb,500);return;}
-const txt=texts[ti];
-if(ci===0&&ti>0)cur=newLine();
-cur.appendChild(cursor);
-if(ci<txt.length){
-const ch=txt[ci];cur.insertBefore(document.createTextNode(ch),cursor);ci++;
-if(ci%3===0&&soundEnabled&&audioCtx)playTone(600+Math.random()*200,0.03,'sine',0.02);
-setTimeout(type,ch==='.'||ch===','||ch==='…'?speed*5:speed);
-}else{ci=0;ti++;setTimeout(type,speed*8);}
-}
-type();
+  const c=document.getElementById(elId);c.innerHTML='';
+  let ti=0,ci=0;
+  function newLine(){
+    const p=document.createElement('p');p.className='dialogue-text';
+    p.style.marginBottom='8px';p.style.opacity='0';
+    p.style.animation='fadeInUp 0.5s ease-out forwards';
+    c.appendChild(p);return p;
+  }
+  let cur=newLine();
+  const cursor=document.createElement('span');cursor.className='typewriter-cursor';
+  function type(){
+    if(ti>=texts.length){cursor.remove();if(cb)setTimeout(cb,500);return;}
+    const txt=texts[ti];
+    if(ci===0&&ti>0)cur=newLine();
+    cur.appendChild(cursor);
+    if(ci<txt.length){
+      const ch=txt[ci];cur.insertBefore(document.createTextNode(ch),cursor);ci++;
+      if(ci%3===0&&sfxEnabled&&audioCtx)playTone(600+Math.random()*200,0.03,'sine',0.02);
+      setTimeout(type,ch==='.'||ch===','||ch==='…'?speed*5:speed);
+    }else{ci=0;ti++;setTimeout(type,speed*8);}
+  }
+  type();
 }
 
-// ===== SCENE MANAGEMENT =====
+// ============================================================
+// SCENE MANAGEMENT
+// ============================================================
 let currentScene=0;
 
-function scrollToTop(){window.scrollTo({top:0,behavior:'auto'});}
-
 function nextScene(num){
-playMagicSound();
-const cur=document.querySelector('.scene.active');
-if(cur){
-cur.style.transition='opacity 0.5s ease';cur.style.opacity='0';
-setTimeout(()=>{
-cur.classList.remove('active');cur.style.opacity='';cur.style.transition='';
-const next=document.getElementById('scene-'+num);
-if(next){next.classList.add('active');currentScene=num;scrollToTop();initScene(num);}
-},500);
-}
+  playMagicSound();
+  stopVoice(); // Stop any playing voice when switching scenes
+  const cur=document.querySelector('.scene.active');
+  if(cur){
+    cur.style.transition='opacity 0.5s ease';cur.style.opacity='0';
+    setTimeout(()=>{
+      cur.classList.remove('active');cur.style.opacity='';cur.style.transition='';
+      const next=document.getElementById('scene-'+num);
+      if(next){next.classList.add('active');currentScene=num;
+      window.scrollTo({top:0,behavior:'auto'});initScene(num);}
+    },500);
+  }
 }
 
 function initScene(n){
-switch(n){
-case 0:initNarrator();break;case 1:initMcgonagall();break;
-case 2:initHermione();break;case 3:initNeville();break;
-case 4:initLupin();break;case 5:initHarry();break;
-case 6:initRon();break;case 7:initLuna();break;
-case 8:initDobby();break;case 9:initSnape();break;
-case 10:initHagrid();break;case 11:initSirius();break;
-case 12:initDumbledore();break;
-}
-}
-
-// ===== SCROLL HELPER =====
-function smoothScrollDown(){
-window.scrollBy({top:300,behavior:'smooth'});
+  switch(n){
+    case 0:initNarrator();break;case 1:initMcgonagall();break;
+    case 2:initHermione();break;case 3:initNeville();break;
+    case 4:initLupin();break;case 5:initHarry();break;
+    case 6:initRon();break;case 7:initLuna();break;
+    case 8:initDobby();break;case 9:initSnape();break;
+    case 10:initHagrid();break;case 11:initSirius();break;
+    case 12:initDumbledore();break;
+  }
 }
 
-function addScrollArrow(container){
-const arrow=document.createElement('div');
-arrow.className='scroll-arrow';arrow.innerHTML='↓';
-arrow.onclick=smoothScrollDown;
-container.appendChild(arrow);
-}
-
-// ===== SCENE 0: NARRATOR =====
+// ============================================================
+// SCENE 0: NARRATOR
+// ============================================================
 function initNarrator(){
-document.getElementById('seal-progress').style.display='none';
-playHedwigTheme();
-typeWriter('dialogue-0',[
-'Добро пожаловать обратно в Хогвартс.',
-'Если ты слышишь этот голос, значит древняя магия наконец завершила поиск.',
-'Сегодня тебе предстоит встретиться с теми, чьи имена навсегда вписаны в историю школы.',
-'Каждый из них приготовил испытание.',
-'Выполни их все…',
-'И Хогвартс официально признает тебя своей выпускницей.'
-],()=>{
-const w=document.getElementById('btn-start-wrap');
-w.style.display='block';w.classList.add('fade-in-up');
-});
+  document.getElementById('seal-progress').style.display='none';
+  // Фоновая музыка уже играет (или начнётся при клике)
+  startBackgroundMusic(); // Try to start if not already
+  playVoice(0, 'intro');
+  typeWriter('dialogue-0',[
+    'Добро пожаловать обратно в Хогвартс.',
+    'Если ты слышишь этот голос, значит древняя магия наконец завершила поиск.',
+    'Сегодня тебе предстоит встретиться с теми, чьи имена навсегда вписаны в историю школы.',
+    'Каждый из них приготовил испытание.',
+    'Выполни их все…',
+    'И Хогвартс официально признает тебя своей выпускницей.'
+  ],()=>{
+    const w=document.getElementById('btn-start-wrap');
+    w.style.display='block';w.classList.add('fade-in-up');
+  });
 }
 
-// ===== SCENE 1: MCGONAGALL =====
+// ============================================================
+// SCENE 1: MCGONAGALL
+// ============================================================
 function initMcgonagall(){
-document.getElementById('seal-progress').style.display='flex';
-typeWriter('dialogue-1',[
-'Миссис Юлия.',
-'Опоздания в Хогвартсе недопустимы.',
-'Но ради такого случая…',
-'Сделаем исключение.',
-'Любой волшебник должен быть внимателен.',
-'Поэтому первое испытание очень простое.'
-],()=>{
-const t=document.getElementById('task-1');t.style.display='block';
-setTimeout(()=>{t.scrollIntoView({behavior:'smooth',block:'center'});},300);
-});
+  document.getElementById('seal-progress').style.display='flex';
+  playVoice(1, 'intro'); // 🎙️
+  typeWriter('dialogue-1',[
+    'Миссис Юлия.',
+    'Опоздания в Хогвартсе недопустимы.',
+    'Но ради такого случая…',
+    'Сделаем исключение.',
+    'Любой волшебник должен быть внимателен.',
+    'Поэтому первое испытание очень простое.'
+  ],()=>{
+    const t=document.getElementById('task-1');t.style.display='block';
+    setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'center'}),300);
+  });
 }
-
 let foundItems=new Set();
 function findItem(item){
-if(foundItems.has(item))return;
-foundItems.add(item);
-document.getElementById('item-'+item).classList.add('found');
-document.getElementById('found-count').textContent=foundItems.size;
-playRevealSound();
-if(foundItems.size===5){
-setTimeout(()=>{
-document.getElementById('task-1').style.display='none';
-const a=document.getElementById('after-task-1');a.style.display='block';
-earnBadge('mcgonagall');
-typeWriter('dialogue-1-after',['Отлично.','Внимательность никогда не бывает лишней.','Первый фрагмент печати — твой.']);
-setTimeout(()=>a.scrollIntoView({behavior:'smooth',block:'center'}),300);
-},600);
-}
+  if(foundItems.has(item))return;
+  foundItems.add(item);
+  document.getElementById('item-'+item).classList.add('found');
+  document.getElementById('found-count').textContent=foundItems.size;
+  playRevealSound();
+  if(foundItems.size===5){
+    setTimeout(()=>{
+      document.getElementById('task-1').style.display='none';
+      const a=document.getElementById('after-task-1');a.style.display='block';
+      earnBadge('mcgonagall');
+      playVoice(1, 'after'); // 🎙️ Play after-task voice
+      typeWriter('dialogue-1-after',['Отлично.','Внимательность никогда не бывает лишней.','Первый фрагмент печати — твой.']);
+      setTimeout(()=>a.scrollIntoView({behavior:'smooth',block:'center'}),300);
+    },600);
+  }
 }
 
-// ===== SCENE 2: HERMIONE =====
+// ============================================================
+// SCENE 2: HERMIONE
+// ============================================================
 const riddles=[
-{text:'Что становится больше,\nесли у него отнять часть?',answers:['яма','яму','дыра','дырка'],hint:'Подумай о земле...'},
-{text:'У меня нет крыльев, но я могу летать.\nУ меня нет глаз, но я могу плакать.\nЧто я?',answers:['облако','туча','облака'],hint:'Посмотри в небо...'},
-{text:'Меня все ждут, но когда я прихожу — прячутся.\nЧто я?',answers:['дождь','дождик'],hint:'Что капает с неба?'}
+  {text:'Что становится больше,\nесли у него отнять часть?',answers:['яма','яму','дыра','дырка'],hint:'Подумай о земле...'},
+  {text:'У меня нет крыльев, но я могу летать.\nУ меня нет глаз, но я могу плакать.\nЧто я?',answers:['облако','туча','облака'],hint:'Посмотри в небо...'},
+  {text:'Меня все ждут, но когда я прихожу — прячутся.\nЧто я?',answers:['дождь','дождик'],hint:'Что капает с неба?'}
 ];
 let riddleAttempts={};
 
 function initHermione(){
-typeWriter('dialogue-2',['Хорошо.','Но одного внимания недостаточно.','Волшебник должен уметь думать.'],()=>{
-document.getElementById('task-2').style.display='block';showRiddle(0);
-setTimeout(()=>document.getElementById('task-2').scrollIntoView({behavior:'smooth',block:'center'}),300);
-});
+  playVoice(2, 'intro'); // 🎙️
+  typeWriter('dialogue-2',['Хорошо.','Но одного внимания недостаточно.','Волшебник должен уметь думать.'],()=>{
+    document.getElementById('task-2').style.display='block';showRiddle(0);
+    setTimeout(()=>document.getElementById('task-2').scrollIntoView({behavior:'smooth',block:'center'}),300);
+  });
 }
-
 function showRiddle(idx){
-if(idx>=riddles.length){
-document.getElementById('task-2').style.display='none';
-const a=document.getElementById('after-task-2');a.style.display='block';
-earnBadge('hermione');
-typeWriter('dialogue-2-after',['Прекрасно.','Иногда знания действительно сильнее заклинаний.']);
-return;
+  if(idx>=riddles.length){
+    document.getElementById('task-2').style.display='none';
+    const a=document.getElementById('after-task-2');a.style.display='block';
+    earnBadge('hermione');
+    playVoice(2, 'after'); // 🎙️
+    typeWriter('dialogue-2-after',['Прекрасно.','Иногда знания действительно сильнее заклинаний.']);
+    return;
+  }
+  const c=document.getElementById('riddles-container'),r=riddles[idx];
+  c.innerHTML=`<div class="riddle-card"><p style="color:var(--gold-dark);font-family:'Cinzel',serif;margin-bottom:10px;">Загадка ${idx+1} из ${riddles.length}</p><p class="riddle-text">${r.text.replace(/\n/g,'<br>')}</p><input type="text" class="riddle-input" id="riddle-answer-${idx}" placeholder="Ответ..." onkeydown="if(event.key==='Enter')checkRiddle(${idx})"><br><br><button class="magic-btn secondary" onclick="checkRiddle(${idx})">Проверить</button><div class="riddle-status" id="riddle-status-${idx}"></div><div class="riddle-hint" id="riddle-hint-${idx}">${r.hint}</div></div>`;
 }
-const c=document.getElementById('riddles-container'),r=riddles[idx];
-c.innerHTML=`<div class="riddle-card"><p style="color:var(--gold-dark);font-family:'Cinzel',serif;margin-bottom:10px;">Загадка ${idx+1} из ${riddles.length}</p><p class="riddle-text">${r.text.replace(/\n/g,'<br>')}</p><input type="text" class="riddle-input" id="riddle-answer-${idx}" placeholder="Ответ..." onkeydown="if(event.key==='Enter')checkRiddle(${idx})"><br><br><button class="magic-btn secondary" onclick="checkRiddle(${idx})">Проверить</button><div class="riddle-status" id="riddle-status-${idx}"></div><div class="riddle-hint" id="riddle-hint-${idx}">${r.hint}</div></div>`;
-}
-
 function checkRiddle(idx){
-const inp=document.getElementById('riddle-answer-'+idx),st=document.getElementById('riddle-status-'+idx);
-const ans=inp.value.trim().toLowerCase();if(!ans)return;
-if(riddles[idx].answers.includes(ans)){
-st.innerHTML='<span class="riddle-correct">✨ Верно!</span>';playRevealSound();
-setTimeout(()=>showRiddle(idx+1),1200);
-}else{
-if(!riddleAttempts[idx])riddleAttempts[idx]=0;riddleAttempts[idx]++;
-st.innerHTML='<span class="riddle-wrong">Попробуй ещё раз</span>';
-inp.value='';inp.style.animation='shake 0.5s ease';
-setTimeout(()=>inp.style.animation='',500);
-if(riddleAttempts[idx]>=3)document.getElementById('riddle-hint-'+idx).classList.add('visible');
-if(riddleAttempts[idx]>=5){
-st.innerHTML='<span class="riddle-correct">Ответ: '+riddles[idx].answers[0]+'. Идём дальше!</span>';
-setTimeout(()=>showRiddle(idx+1),1500);
-}
-}
+  const inp=document.getElementById('riddle-answer-'+idx),st=document.getElementById('riddle-status-'+idx);
+  const ans=inp.value.trim().toLowerCase();if(!ans)return;
+  if(riddles[idx].answers.includes(ans)){
+    st.innerHTML='<span class="riddle-correct">✨ Верно!</span>';playRevealSound();
+    setTimeout(()=>showRiddle(idx+1),1200);
+  }else{
+    if(!riddleAttempts[idx])riddleAttempts[idx]=0;riddleAttempts[idx]++;
+    st.innerHTML='<span class="riddle-wrong">Попробуй ещё раз</span>';
+    inp.value='';inp.style.animation='shake 0.5s ease';
+    setTimeout(()=>inp.style.animation='',500);
+    if(riddleAttempts[idx]>=3)document.getElementById('riddle-hint-'+idx).classList.add('visible');
+    if(riddleAttempts[idx]>=5){
+      st.innerHTML='<span class="riddle-correct">Ответ: '+riddles[idx].answers[0]+'. Идём дальше!</span>';
+      setTimeout(()=>showRiddle(idx+1),1500);
+    }
+  }
 }
 
-// ===== SCENE 3: NEVILLE =====
+// ============================================================
+// SCENE 3: NEVILLE
+// ============================================================
 let nevilleTimer,nevilleTimeLeft=30;
 function initNeville(){
-typeWriter('dialogue-3',['Честно говоря…','Я тоже часто ошибался.','Но профессор Люпин говорил, что смелость — это не отсутствие страха.','Поэтому…'],()=>{
-document.getElementById('task-3').style.display='block';startNevilleTimer();
-setTimeout(()=>document.getElementById('task-3').scrollIntoView({behavior:'smooth',block:'center'}),300);
-});
+  playVoice(3, 'intro'); // 🎙️
+  typeWriter('dialogue-3',['Честно говоря…','Я тоже часто ошибался.','Но профессор Люпин говорил, что смелость — это не отсутствие страха.','Поэтому…'],()=>{
+    document.getElementById('task-3').style.display='block';startNevilleTimer();
+    setTimeout(()=>document.getElementById('task-3').scrollIntoView({behavior:'smooth',block:'center'}),300);
+  });
 }
 function startNevilleTimer(){
-nevilleTimeLeft=30;const ci=document.getElementById('timer-circle-3'),nm=document.getElementById('timer-number-3');
-nevilleTimer=setInterval(()=>{
-nevilleTimeLeft--;nm.textContent=nevilleTimeLeft;
-ci.style.strokeDashoffset=471*(1-nevilleTimeLeft/30);
-if(nevilleTimeLeft<=10){nm.style.color='#f44336';ci.style.stroke='#f44336';}
-if(nevilleTimeLeft<=0){clearInterval(nevilleTimer);foundGreen();}
-},1000);
+  nevilleTimeLeft=30;const ci=document.getElementById('timer-circle-3'),nm=document.getElementById('timer-number-3');
+  nevilleTimer=setInterval(()=>{
+    nevilleTimeLeft--;nm.textContent=nevilleTimeLeft;
+    ci.style.strokeDashoffset=471*(1-nevilleTimeLeft/30);
+    if(nevilleTimeLeft<=10){nm.style.color='#f44336';ci.style.stroke='#f44336';}
+    if(nevilleTimeLeft<=0){clearInterval(nevilleTimer);foundGreen();}
+  },1000);
 }
 function foundGreen(){
-clearInterval(nevilleTimer);
-document.getElementById('task-3').style.display='none';
-const a=document.getElementById('after-task-3');a.style.display='block';
-earnBadge('neville');
-typeWriter('dialogue-3-after',['Отлично!','Видишь? Смелость — это просто решиться на первый шаг.']);
+  clearInterval(nevilleTimer);
+  document.getElementById('task-3').style.display='none';
+  const a=document.getElementById('after-task-3');a.style.display='block';
+  earnBadge('neville');
+  playVoice(3, 'after'); // 🎙️
+  typeWriter('dialogue-3-after',['Отлично!','Видишь? Смелость — это просто решиться на первый шаг.']);
 }
 
-// ===== SCENE 4: LUPIN =====
+// ============================================================
+// SCENE 4: LUPIN
+// ============================================================
 function initLupin(){
-typeWriter('dialogue-4',['Самые сильные волшебники умеют сохранять спокойствие.','Сейчас закрой глаза.','Сделай три глубоких вдоха.','А теперь вспомни своё самое счастливое воспоминание.'],()=>{
-document.getElementById('task-4').style.display='block';
-setTimeout(()=>document.getElementById('task-4').scrollIntoView({behavior:'smooth',block:'center'}),300);
-});
+  playVoice(4, 'intro'); // 🎙️
+  typeWriter('dialogue-4',['Самые сильные волшебники умеют сохранять спокойствие.','Сейчас закрой глаза.','Сделай три глубоких вдоха.','А теперь вспомни своё самое счастливое воспоминание.'],()=>{
+    document.getElementById('task-4').style.display='block';
+    setTimeout(()=>document.getElementById('task-4').scrollIntoView({behavior:'smooth',block:'center'}),300);
+  });
 }
 function startBreathing(){
-document.getElementById('start-breathing').style.display='none';
-const c=document.getElementById('breath-circle');let cnt=0;
-function bIn(){c.className='breath-circle breathing-in';c.textContent='Вдох...';playTone(330,4,'sine',0.03);setTimeout(bOut,4000);}
-function bOut(){c.className='breath-circle breathing-out';c.textContent='Выдох...';playTone(262,4,'sine',0.03);cnt++;cnt<3?setTimeout(bIn,4000):setTimeout(finish,4000);}
-function finish(){
-c.className='breath-circle';c.textContent='✨';
-document.getElementById('task-4').style.display='none';
-document.getElementById('after-task-4').style.display='block';
-earnBadge('lupin');
-typeWriter('dialogue-4-after',['Именно из таких воспоминаний рождается Патронус.']);
-}
-bIn();
+  document.getElementById('start-breathing').style.display='none';
+  const c=document.getElementById('breath-circle');let cnt=0;
+  function bIn(){c.className='breath-circle breathing-in';c.textContent='Вдох...';playTone(330,4,'sine',0.03);setTimeout(bOut,4000);}
+  function bOut(){c.className='breath-circle breathing-out';c.textContent='Выдох...';playTone(262,4,'sine',0.03);cnt++;cnt<3?setTimeout(bIn,4000):setTimeout(finish,4000);}
+  function finish(){
+    c.className='breath-circle';c.textContent='✨';
+    document.getElementById('task-4').style.display='none';
+    document.getElementById('after-task-4').style.display='block';
+    earnBadge('lupin');
+    playVoice(4, 'after'); // 🎙️
+    typeWriter('dialogue-4-after',['Именно из таких воспоминаний рождается Патронус.']);
+  }
+  bIn();
 }
 
-// ===== SCENE 5: HARRY =====
+// ============================================================
+// SCENE 5: HARRY
+// ============================================================
 let userQuality='';
 function initHarry(){
-typeWriter('dialogue-5',['Привет.','Знаешь…','За свою жизнь я понял одну вещь.','Не существует идеальных людей.','Но существуют люди, которые не перестают идти вперёд.','Поэтому твоё испытание простое.'],()=>{
-document.getElementById('task-5').style.display='block';
-setTimeout(()=>document.getElementById('task-5').scrollIntoView({behavior:'smooth',block:'center'}),300);
-});
+  playVoice(5, 'intro'); // 🎙️
+  typeWriter('dialogue-5',['Привет.','Знаешь…','За свою жизнь я понял одну вещь.','Не существует идеальных людей.','Но существуют люди, которые не перестают идти вперёд.','Поэтому твоё испытание простое.'],()=>{
+    document.getElementById('task-5').style.display='block';
+    setTimeout(()=>document.getElementById('task-5').scrollIntoView({behavior:'smooth',block:'center'}),300);
+  });
 }
 function submitQuality(){
-const inp=document.getElementById('quality-input');userQuality=inp.value.trim();
-if(!userQuality){inp.style.animation='shake 0.5s ease';setTimeout(()=>inp.style.animation='',500);return;}
-document.getElementById('task-5').style.display='none';
-document.getElementById('after-task-5').style.display='block';
-earnBadge('harry');
-typeWriter('dialogue-5-after',['«'+userQuality+'»','Это действительно важно.','Никогда не забывай об этом.']);
+  const inp=document.getElementById('quality-input');userQuality=inp.value.trim();
+  if(!userQuality){inp.style.animation='shake 0.5s ease';setTimeout(()=>inp.style.animation='',500);return;}
+  document.getElementById('task-5').style.display='none';
+  document.getElementById('after-task-5').style.display='block';
+  earnBadge('harry');
+  playVoice(5, 'after'); // 🎙️
+  typeWriter('dialogue-5-after',['«'+userQuality+'»','Это действительно важно.','Никогда не забывай об этом.']);
 }
 
-// ===== SCENE 6: RON =====
+// ============================================================
+// SCENE 6: RON
+// ============================================================
 function initRon(){
-typeWriter('dialogue-6',['😂','Отлично.','Теперь серьёзные испытания закончились.','Почти.'],()=>{
-document.getElementById('task-6').style.display='block';
-setTimeout(()=>document.getElementById('task-6').scrollIntoView({behavior:'smooth',block:'center'}),300);
-});
+  playVoice(6, 'intro'); // 🎙️
+  typeWriter('dialogue-6',['😂','Отлично.','Теперь серьёзные испытания закончились.','Почти.'],()=>{
+    document.getElementById('task-6').style.display='block';
+    setTimeout(()=>document.getElementById('task-6').scrollIntoView({behavior:'smooth',block:'center'}),300);
+  });
 }
 function selectChoice(el,who){
-playClickSound();
-el.parentElement.querySelectorAll('.magic-radio').forEach(r=>r.classList.remove('selected'));
-el.classList.add('selected');
-document.getElementById(who+'-btn').style.display='inline-block';
+  playClickSound();
+  el.parentElement.querySelectorAll('.magic-radio').forEach(r=>r.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById(who+'-btn').style.display='inline-block';
 }
 function submitRonChoice(){
-document.getElementById('task-6').style.display='none';
-document.getElementById('after-task-6').style.display='block';
-earnBadge('ron');
-typeWriter('dialogue-6-after',['Полностью согласен. 😄','Ты определённо знаешь толк в хорошей еде!']);
+  document.getElementById('task-6').style.display='none';
+  document.getElementById('after-task-6').style.display='block';
+  earnBadge('ron');
+  playVoice(6, 'after'); // 🎙️
+  typeWriter('dialogue-6-after',['Полностью согласен. 😄','Ты определённо знаешь толк в хорошей еде!']);
 }
 
-// ===== SCENE 7: LUNA =====
+// ============================================================
+// SCENE 7: LUNA
+// ============================================================
 let nightSkyAnim,lunaTimer;
 function initLuna(){
-typeWriter('dialogue-7',['Морщерогие кизляки сегодня сказали мне, что рядом находится человек, который умеет замечать чудеса.','Кажется…','Это ты.'],()=>{
-document.getElementById('task-7').style.display='block';
-setTimeout(()=>{
-document.getElementById('task-7').scrollIntoView({behavior:'smooth',block:'center'});
-startNightSky();startLunaTimer();
-},300);
-});
+  playVoice(7, 'intro'); // 🎙️
+  typeWriter('dialogue-7',['Морщерогие кизляки сегодня сказали мне, что рядом находится человек, который умеет замечать чудеса.','Кажется…','Это ты.'],()=>{
+    document.getElementById('task-7').style.display='block';
+    setTimeout(()=>{
+      document.getElementById('task-7').scrollIntoView({behavior:'smooth',block:'center'});
+      startNightSky();startLunaTimer();
+    },300);
+  });
 }
 function startNightSky(){
-const cv=document.getElementById('night-sky-canvas'),ctx=cv.getContext('2d');
-const W=cv.offsetWidth,H=cv.offsetHeight;cv.width=W;cv.height=H;
-const stars=[];for(let i=0;i<100;i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005});
-const sStars=[];
-function draw(){
-ctx.clearRect(0,0,W,H);
-const g=ctx.createLinearGradient(0,0,0,H);
-g.addColorStop(0,'#000020');g.addColorStop(0.5,'#000040');g.addColorStop(1,'#000030');
-ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-ctx.beginPath();ctx.arc(W*0.8,H*0.2,20,0,Math.PI*2);
-const mg=ctx.createRadialGradient(W*0.78,H*0.18,3,W*0.8,H*0.2,25);
-mg.addColorStop(0,'#fffde0');mg.addColorStop(1,'rgba(240,230,140,0.3)');
-ctx.fillStyle=mg;ctx.fill();
-stars.forEach(s=>{s.a+=s.s;const al=0.3+Math.abs(Math.sin(s.a))*0.7;
-ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-ctx.fillStyle=`rgba(255,255,255,${al})`;ctx.fill();});
-for(let i=sStars.length-1;i>=0;i--){
-const ss=sStars[i];ss.x+=ss.vx;ss.y+=ss.vy;ss.life-=ss.decay;
-if(ss.life<=0){sStars.splice(i,1);continue;}
-ctx.beginPath();ctx.moveTo(ss.x,ss.y);ctx.lineTo(ss.x-ss.vx*8,ss.y-ss.vy*8);
-const sg=ctx.createLinearGradient(ss.x,ss.y,ss.x-ss.vx*8,ss.y-ss.vy*8);
-sg.addColorStop(0,`rgba(255,255,255,${ss.life})`);sg.addColorStop(1,'rgba(255,255,255,0)');
-ctx.strokeStyle=sg;ctx.lineWidth=2;ctx.stroke();
-}
-if(Math.random()<0.03)sStars.push({x:Math.random()*W*0.8,y:Math.random()*H*0.3,vx:3+Math.random()*4,vy:1+Math.random()*2,life:1,decay:0.02+Math.random()*0.02});
-nightSkyAnim=requestAnimationFrame(draw);
-}
-draw();
+  const cv=document.getElementById('night-sky-canvas'),ctx=cv.getContext('2d');
+  const W=cv.offsetWidth,H=cv.offsetHeight;cv.width=W;cv.height=H;
+  const stars=[];for(let i=0;i<100;i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.5+0.5,a:Math.random(),s:Math.random()*0.02+0.005});
+  const sStars=[];
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const g=ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'#000020');g.addColorStop(0.5,'#000040');g.addColorStop(1,'#000030');
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    ctx.beginPath();ctx.arc(W*0.8,H*0.2,20,0,Math.PI*2);
+    const mg=ctx.createRadialGradient(W*0.78,H*0.18,3,W*0.8,H*0.2,25);
+    mg.addColorStop(0,'#fffde0');mg.addColorStop(1,'rgba(240,230,140,0.3)');
+    ctx.fillStyle=mg;ctx.fill();
+    stars.forEach(s=>{s.a+=s.s;const al=0.3+Math.abs(Math.sin(s.a))*0.7;
+    ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(255,255,255,${al})`;ctx.fill();});
+    for(let i=sStars.length-1;i>=0;i--){
+      const ss=sStars[i];ss.x+=ss.vx;ss.y+=ss.vy;ss.life-=ss.decay;
+      if(ss.life<=0){sStars.splice(i,1);continue;}
+      ctx.beginPath();ctx.moveTo(ss.x,ss.y);ctx.lineTo(ss.x-ss.vx*8,ss.y-ss.vy*8);
+      const sg=ctx.createLinearGradient(ss.x,ss.y,ss.x-ss.vx*8,ss.y-ss.vy*8);
+      sg.addColorStop(0,`rgba(255,255,255,${ss.life})`);sg.addColorStop(1,'rgba(255,255,255,0)');
+      ctx.strokeStyle=sg;ctx.lineWidth=2;ctx.stroke();
+    }
+    if(Math.random()<0.03)sStars.push({x:Math.random()*W*0.8,y:Math.random()*H*0.3,vx:3+Math.random()*4,vy:1+Math.random()*2,life:1,decay:0.02+Math.random()*0.02});
+    nightSkyAnim=requestAnimationFrame(draw);
+  }
+  draw();
 }
 function startLunaTimer(){
-let t=15;const ci=document.getElementById('timer-circle-7'),nm=document.getElementById('timer-number-7');
-lunaTimer=setInterval(()=>{
-t--;nm.textContent=t;ci.style.strokeDashoffset=251*(1-t/15);
-if(t<=0){clearInterval(lunaTimer);if(nightSkyAnim)cancelAnimationFrame(nightSkyAnim);
-document.getElementById('task-7').style.display='none';
-document.getElementById('after-task-7').style.display='block';
-earnBadge('luna');typeWriter('dialogue-7-after',['Теперь я тоже увидела чудо. ✨']);}
-},1000);
+  let t=15;const ci=document.getElementById('timer-circle-7'),nm=document.getElementById('timer-number-7');
+  lunaTimer=setInterval(()=>{
+    t--;nm.textContent=t;ci.style.strokeDashoffset=251*(1-t/15);
+    if(t<=0){clearInterval(lunaTimer);if(nightSkyAnim)cancelAnimationFrame(nightSkyAnim);
+    document.getElementById('task-7').style.display='none';
+    document.getElementById('after-task-7').style.display='block';
+    earnBadge('luna');
+    playVoice(7, 'after'); // 🎙️
+    typeWriter('dialogue-7-after',['Теперь я тоже увидела чудо. ✨']);}
+  },1000);
 }
 
-// ===== SCENE 8: DOBBY =====
+// ============================================================
+// SCENE 8: DOBBY
+// ============================================================
 function initDobby(){
-typeWriter('dialogue-8',['Добби очень рад видеть миссис Юлию! 😭','Добби приготовил подарок.','Но сначала…'],()=>{
-document.getElementById('task-8').style.display='block';
-setTimeout(()=>document.getElementById('task-8').scrollIntoView({behavior:'smooth',block:'center'}),300);
-});
+  playVoice(8, 'intro'); // 🎙️
+  typeWriter('dialogue-8',['Добби очень рад видеть миссис Юлию! 😭','Добби приготовил подарок.','Но сначала…'],()=>{
+    document.getElementById('task-8').style.display='block';
+    setTimeout(()=>document.getElementById('task-8').scrollIntoView({behavior:'smooth',block:'center'}),300);
+  });
 }
 function dobbyDone(){
-document.getElementById('task-8').style.display='none';
-document.getElementById('after-task-8').style.display='block';
-earnBadge('dobby');
-typeWriter('dialogue-8-after',['Добби считает, что хорошие люди заслуживают немного доброты.','Даже если они дарят её сами себе. 😊']);
+  document.getElementById('task-8').style.display='none';
+  document.getElementById('after-task-8').style.display='block';
+  earnBadge('dobby');
+  playVoice(8, 'after'); // 🎙️
+  typeWriter('dialogue-8-after',['Добби считает, что хорошие люди заслуживают немного доброты.','Даже если они дарят её сами себе. 😊']);
 }
 
-// ===== SCENE 9: SNAPE =====
+// ============================================================
+// SCENE 9: SNAPE
+// ============================================================
 function initSnape(){
-playDramaticSound();
-typeWriter('dialogue-9',['Миссис Юлия.','Ваши результаты…','Удивительно неплохи.','…','Не улыбайтесь.','Это ещё не похвала.'],()=>{
-document.getElementById('task-9').style.display='block';
-setTimeout(()=>document.getElementById('task-9').scrollIntoView({behavior:'smooth',block:'center'}),300);
-});
+  playDramaticSound();
+  playVoice(9, 'intro'); // 🎙️
+  typeWriter('dialogue-9',['Миссис Юлия.','Ваши результаты…','Удивительно неплохи.','…','Не улыбайтесь.','Это ещё не похвала.'],()=>{
+    document.getElementById('task-9').style.display='block';
+    setTimeout(()=>document.getElementById('task-9').scrollIntoView({behavior:'smooth',block:'center'}),300);
+  });
 }
 function submitSnapeChoice(){
-document.getElementById('task-9').style.display='none';
-document.getElementById('after-task-9').style.display='block';
-earnBadge('snape');
-typeWriter('dialogue-9-after',['Хм…','Я бы выбрал иначе.','Но спорить сегодня не стану.']);
+  document.getElementById('task-9').style.display='none';
+  document.getElementById('after-task-9').style.display='block';
+  earnBadge('snape');
+  playVoice(9, 'after'); // 🎙️
+  typeWriter('dialogue-9-after',['Хм…','Я бы выбрал иначе.','Но спорить сегодня не стану.']);
 }
 
-// ===== SCENE 10: HAGRID =====
+// ============================================================
+// SCENE 10: HAGRID
+// ============================================================
 function initHagrid(){
-typeWriter('dialogue-10',['Ну здравствуй!','Я всё ждал, когда ты наконец заглянешь.','Знаешь…','За все годы я понял одну вещь.','Добрые люди встречаются редко.','Береги это.'],()=>{
-document.getElementById('task-10').style.display='block';
-setTimeout(()=>document.getElementById('task-10').scrollIntoView({behavior:'smooth',block:'center'}),300);
-});
+  playVoice(10, 'intro'); // 🎙️
+  typeWriter('dialogue-10',['Ну здравствуй!','Я всё ждал, когда ты наконец заглянешь.','Знаешь…','За все годы я понял одну вещь.','Добрые люди встречаются редко.','Береги это.'],()=>{
+    document.getElementById('task-10').style.display='block';
+    setTimeout(()=>document.getElementById('task-10').scrollIntoView({behavior:'smooth',block:'center'}),300);
+  });
 }
 function hagridDone(){
-document.getElementById('task-10').style.display='none';
-document.getElementById('after-task-10').style.display='block';
-earnBadge('hagrid');typeWriter('dialogue-10-after',['Вот теперь совсем другое дело. ❤️']);
+  document.getElementById('task-10').style.display='none';
+  document.getElementById('after-task-10').style.display='block';
+  earnBadge('hagrid');
+  playVoice(10, 'after'); // 🎙️
+  typeWriter('dialogue-10-after',['Вот теперь совсем другое дело. ❤️']);
 }
 
-// ===== SCENE 11: SIRIUS =====
+// ============================================================
+// SCENE 11: SIRIUS
+// ============================================================
 function initSirius(){
-typeWriter('dialogue-11',[
-'Привет, Юля.','Если ты дошла сюда, значит прошла все испытания.','Знаешь…',
-'Дом — это не место.','Дом — это люди, рядом с которыми можно быть собой.',
-'Именно таких людей желаю тебе всегда встречать.',
-'И никогда не переставай верить в чудеса.',
-'Даже если весь мир говорит, что они существуют только в книгах.',
-'Потому что настоящее волшебство…','Всегда начинается с людей.'
-],()=>{
-earnBadge('sirius');
-setTimeout(()=>{
-const a=document.getElementById('after-task-11');
-const n=document.createElement('p');n.className='dialogue-text';
-n.style.marginBottom='20px';n.style.fontStyle='italic';n.style.color='var(--gold-dark)';
-n.textContent='Остался последний шаг. Его приготовил директор.';
-a.insertBefore(n,a.firstChild);
-a.style.display='block';a.classList.add('fade-in-up');
-a.scrollIntoView({behavior:'smooth',block:'center'});
-},500);
-});
+  playVoice(11, 'intro'); // 🎙️
+  typeWriter('dialogue-11',[
+    'Привет, Юля.','Если ты дошла сюда, значит прошла все испытания.','Знаешь…',
+    'Дом — это не место.','Дом — это люди, рядом с которыми можно быть собой.',
+    'Именно таких людей желаю тебе всегда встречать.',
+    'И никогда не переставай верить в чудеса.',
+    'Даже если весь мир говорит, что они существуют только в книгах.',
+    'Потому что настоящее волшебство…','Всегда начинается с людей.'
+  ],()=>{
+    earnBadge('sirius');
+    setTimeout(()=>{
+      const a=document.getElementById('after-task-11');
+      const n=document.createElement('p');n.className='dialogue-text';
+      n.style.marginBottom='20px';n.style.fontStyle='italic';n.style.color='var(--gold-dark)';
+      n.textContent='Остался последний шаг. Его приготовил директор.';
+      a.insertBefore(n,a.firstChild);
+      a.style.display='block';a.classList.add('fade-in-up');
+      a.scrollIntoView({behavior:'smooth',block:'center'});
+    },500);
+  });
 }
 
-// ===== SCENE 12: DUMBLEDORE =====
+// ============================================================
+// SCENE 12: DUMBLEDORE
+// ============================================================
 function initDumbledore(){
-playHedwigTheme();
-typeWriter('dialogue-12',[
-'Счастье можно найти даже в самые тёмные времена.',
-'Если не забывать обращаться к свету.',
-'Сегодня ты подарила свет всем, кто готовил это испытание.',
-'А теперь…','Хогвартс с гордостью объявляет…'
-],()=>{
-earnBadge('dumbledore');
-setTimeout(()=>{
-flashLightning();playSuccessSound();
-const d=document.getElementById('diploma-area');
-d.style.display='block';d.classList.add('fade-in-up');
-setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'center'}),300);
-},500);
-});
+  playHedwigTheme();
+  playVoice(12, 'intro'); // 🎙️
+  typeWriter('dialogue-12',[
+    'Счастье можно найти даже в самые тёмные времена.',
+    'Если не забывать обращаться к свету.',
+    'Сегодня ты подарила свет всем, кто готовил это испытание.',
+    'А теперь…','Хогвартс с гордостью объявляет…'
+  ],()=>{
+    earnBadge('dumbledore');
+    setTimeout(()=>{
+      flashLightning();playSuccessSound();
+      const d=document.getElementById('diploma-area');
+      d.style.display='block';d.classList.add('fade-in-up');
+      setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'center'}),300);
+    },500);
+  });
 }
-
 function flashLightning(){
-const e=document.getElementById('lightning');e.classList.add('flash');
-setTimeout(()=>e.classList.remove('flash'),300);
+  const e=document.getElementById('lightning');e.classList.add('flash');
+  setTimeout(()=>e.classList.remove('flash'),300);
 }
 
-// ===== SCENE 13: FINALE =====
+// ============================================================
+// SCENE 13: FINALE
+// ============================================================
 function showFinale(){nextScene(13);setTimeout(runFinale,1000);}
 function runFinale(){
-const c=document.getElementById('finale-crest');c.style.display='block';c.classList.add('fade-in-up');
-setTimeout(()=>{document.getElementById('cq-1').classList.add('revealed');playRevealSound();},500);
-setTimeout(()=>document.getElementById('cq-2').classList.add('revealed'),1000);
-setTimeout(()=>{document.getElementById('cq-3').classList.add('revealed');playRevealSound();},1500);
-setTimeout(()=>document.getElementById('cq-4').classList.add('revealed'),2000);
-setTimeout(()=>{
-const g=document.getElementById('finale-gift');g.style.display='block';g.classList.add('fade-in-up');
-g.scrollIntoView({behavior:'smooth',block:'center'});
-},3000);
+  stopVoice();
+  const c=document.getElementById('finale-crest');c.style.display='block';c.classList.add('fade-in-up');
+  setTimeout(()=>{document.getElementById('cq-1').classList.add('revealed');playRevealSound();},500);
+  setTimeout(()=>document.getElementById('cq-2').classList.add('revealed'),1000);
+  setTimeout(()=>{document.getElementById('cq-3').classList.add('revealed');playRevealSound();},1500);
+  setTimeout(()=>document.getElementById('cq-4').classList.add('revealed'),2000);
+  setTimeout(()=>{
+    const g=document.getElementById('finale-gift');g.style.display='block';g.classList.add('fade-in-up');
+    g.scrollIntoView({behavior:'smooth',block:'center'});
+  },3000);
 }
 function openGift(){
-document.getElementById('finale-gift').style.display='none';
-const r=document.getElementById('finale-reveal');r.style.display='block';
-const d=document.getElementById('all-badges-display');
-badges.filter(b=>b.earned).forEach((b,i)=>{
-setTimeout(()=>{
-const el=document.createElement('div');el.className='badge-earned';
-el.style.margin='5px';el.style.display='inline-flex';
-el.innerHTML=`<span class="badge-icon">${b.icon}</span><span class="badge-label">${b.quality}</span>`;
-d.appendChild(el);
-},i*200);
-});
-launchFireworks();playSuccessSound();setTimeout(playHedwigTheme,1000);
-setTimeout(()=>r.scrollIntoView({behavior:'smooth',block:'start'}),500);
+  document.getElementById('finale-gift').style.display='none';
+  const r=document.getElementById('finale-reveal');r.style.display='block';
+  const d=document.getElementById('all-badges-display');
+  badges.filter(b=>b.earned).forEach((b,i)=>{
+    setTimeout(()=>{
+      const el=document.createElement('div');el.className='badge-earned';
+      el.style.margin='5px';el.style.display='inline-flex';
+      el.innerHTML=`<span class="badge-icon">${b.icon}</span><span class="badge-label">${b.quality}</span>`;
+      d.appendChild(el);
+    },i*200);
+  });
+  launchFireworks();playSuccessSound();setTimeout(playHedwigTheme,1000);
+  setTimeout(()=>r.scrollIntoView({behavior:'smooth',block:'start'}),500);
 }
 
-// ===== FIREWORKS =====
+// ============================================================
+// FIREWORKS
+// ============================================================
 function launchFireworks(){
-const colors=['#d4a843','#f0d678','#ff6b6b','#4ecdc4','#a78bfa','#f472b6','#fbbf24'];
-function boom(){
-const x=Math.random()*window.innerWidth,y=Math.random()*window.innerHeight*0.5+50;
-const col=colors[Math.floor(Math.random()*colors.length)];
-for(let i=0;i<20;i++){
-const p=document.createElement('div');p.style.cssText=`position:fixed;left:${x}px;top:${y}px;width:4px;height:4px;border-radius:50%;background:${col};box-shadow:0 0 6px ${col};pointer-events:none;z-index:10000;transition:all 1.5s ease-out;`;
-const a=(Math.PI*2/20)*i,v=50+Math.random()*100;
-document.body.appendChild(p);
-requestAnimationFrame(()=>{p.style.transform=`translate(${Math.cos(a)*v}px,${Math.sin(a)*v}px)`;p.style.opacity='0';});
-setTimeout(()=>p.remove(),1500);
-}
-playTone(200+Math.random()*400,0.3,'sine',0.04);
-}
-for(let i=0;i<8;i++)setTimeout(boom,i*400);
-let c=0;const iv=setInterval(()=>{boom();c++;if(c>15)clearInterval(iv);},800);
-}
-
-// ===== PRELOADER =====
-function runPreloader(){
-const f=document.getElementById('loader-fill');let p=0;
-const iv=setInterval(()=>{
-p+=Math.random()*15+5;
-if(p>=100){p=100;f.style.width='100%';clearInterval(iv);
-setTimeout(()=>{document.getElementById('preloader').classList.add('hidden');
-setTimeout(()=>{document.getElementById('preloader').style.display='none';initScene(0);},1000);},500);
-}else f.style.width=p+'%';
-},200);
+  const colors=['#d4a843','#f0d678','#ff6b6b','#4ecdc4','#a78bfa','#f472b6','#fbbf24'];
+  function boom(){
+    const x=Math.random()*window.innerWidth,y=Math.random()*window.innerHeight*0.5+50;
+    const col=colors[Math.floor(Math.random()*colors.length)];
+    for(let i=0;i<20;i++){
+      const p=document.createElement('div');
+      p.style.cssText=`position:fixed;left:${x}px;top:${y}px;width:4px;height:4px;border-radius:50%;background:${col};box-shadow:0 0 6px ${col};pointer-events:none;z-index:10000;transition:all 1.5s ease-out;`;
+      const a=(Math.PI*2/20)*i,v=50+Math.random()*100;
+      document.body.appendChild(p);
+      requestAnimationFrame(()=>{p.style.transform=`translate(${Math.cos(a)*v}px,${Math.sin(a)*v}px)`;p.style.opacity='0';});
+      setTimeout(()=>p.remove(),1500);
+    }
+    playTone(200+Math.random()*400,0.3,'sine',0.04);
+  }
+  for(let i=0;i<8;i++)setTimeout(boom,i*400);
+  let c=0;const iv=setInterval(()=>{boom();c++;if(c>15)clearInterval(iv);},800);
 }
 
-// ===== INIT =====
-window.addEventListener('load',()=>{createStars();createParticles();renderBadgePanel();runPreloader();});
+// ============================================================
+// PRELOADER
+// ============================================================
+function runPreloader() {
+  const f = document.getElementById('loader-fill');
+  let p = 0;
+  const iv = setInterval(() => {
+    p += Math.random() * 15 + 5;
+    if (p >= 100) {
+      p = 100;
+      f.style.width = '100%';
+      clearInterval(iv);
+      // Показываем кнопку вместо автоскрытия
+      setTimeout(() => {
+        document.getElementById('preloader-start').style.display = 'inline-block';
+        document.getElementById('preloader-start').classList.add('fade-in-up');
+      }, 500);
+    } else {
+      f.style.width = p + '%';
+    }
+  }, 200);
+}
+function dismissPreloader() {
+  // Этот клик разблокирует ВСЕ аудио
+  initAudio();
+  initBackgroundMusic();
+
+  // Запускаем музыку СРАЗУ по клику
+  if (backgroundMusic) {
+    backgroundMusic.play().then(() => {
+      musicStarted = true;
+      updateMusicIndicator();
+    }).catch(e => console.warn('Music error:', e));
+  }
+
+  // Скрываем прелоадер
+  document.getElementById('preloader').classList.add('hidden');
+  setTimeout(() => {
+    document.getElementById('preloader').style.display = 'none';
+    initScene(0);
+  }, 1000);
+}
+// ============================================================
+// INIT
+// ============================================================
+// Start music on any user interaction (required by browsers)
+['click', 'touchstart', 'keydown'].forEach(evt => {
+  document.addEventListener(evt, () => {
+    initAudio();
+    tryStartMusic();
+  }, { once: false });
+});
+
+window.addEventListener('load', () => {
+  createStars();
+  createParticles();
+  renderBadgePanel();
+  initBackgroundMusic(); // Prepare background music
+  runPreloader();
+});
 </script>
 </body>
 </html>
